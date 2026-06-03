@@ -1,0 +1,17 @@
+D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Development\ShooterNaves2025\Definitions.ShooterNaves2025.h
+D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Source\ShooterNaves2025\Public\EnemyFactory.h
+D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Source\ShooterNaves2025\Public\Nave_Padre.h
+D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\Nave_Padre.generated.h
+D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Source\ShooterNaves2025\Public\Nave_Liviana.h
+D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\Nave_Liviana.generated.h
+D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Source\ShooterNaves2025\Public\Nave_Normal.h
+D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\Nave_Normal.generated.h
+D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Source\ShooterNaves2025\Public\Nave_Pesada.h
+D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\Nave_Pesada.generated.h
+D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Source\ShooterNaves2025\Public\Nave_Kamikaze.h
+D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\Nave_Kamikaze.generated.h
+D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Source\ShooterNaves2025\Public\Nave_Francotirador.h
+D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Source\TObjectPool.h
+D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\Nave_Francotirador.generated.h
+D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Source\ShooterNaves2025\Public\Nave_Tanque.h
+D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\Nave_Tanque.generated.h

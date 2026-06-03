@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "ShooterNaves2025",
+			"Path": "D:\\ShooterNaves2025\\Source\\ShooterNaves2025.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "ShooterNaves2025Editor",
+			"Path": "D:\\ShooterNaves2025\\Source\\ShooterNaves2025Editor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
