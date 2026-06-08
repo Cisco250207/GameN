@@ -3,6 +3,8 @@
 #include "GameFramework/Pawn.h"
 #include "../ShooterNaves2025Pawn.h"
 #include "../ShooterNaves2025GameMode.h"
+#include "EnemyAttackFacade.h"
+#include "TimerManager.h"
 #include "Components/StaticMeshComponent.h"
 #include "UObject/ConstructorHelpers.h"
 
@@ -10,10 +12,12 @@ ANave_Padre::ANave_Padre()
 {
 	PrimaryActorTick.bCanEverTick = true;
 
+	AttackFacade = CreateDefaultSubobject<UEnemyAttackFacade>(TEXT("AttackFacade"));
+
 	MeshNave = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MeshNave"));
 	RootComponent = MeshNave;
 
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshCubo(TEXT("/Game/Geometry/craft_miner/craft_speederD/craft_cargoB/0_Mesh_craft_cargoB.0_Mesh_craft_cargoB"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshCubo(TEXT("/Engine/BasicShapes/Cube.Cube"));
 
 	if (MeshCubo.Succeeded())
 	{
@@ -25,23 +29,45 @@ ANave_Padre::ANave_Padre()
 	MeshNave->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
 	MeshNave->SetCollisionObjectType(ECC_Pawn);
 	MeshNave->SetCollisionResponseToAllChannels(ECR_Block);
-	MeshNave->SetWorldScale3D(FVector(1.0f, 1.0f, 1.0f)); // tamaï¿½o normal
+	MeshNave->SetWorldScale3D(FVector(1.0f, 1.0f, 1.0f)); // tamaño normal
 }
 
 void ANave_Padre::BeginPlay()
 {
 	Super::BeginPlay();
+
 	Jugador = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
+
+	// Inicializar Facade
+	if (AttackFacade)
+	{
+		AttackFacade->Inicializar(this, CantidadProyectilesPoolAtaque);
+	}
 
 	// Poner la nave a la misma altura que el jugador
 	FVector Pos = GetActorLocation();
-	Pos.Z = 200.0f; // mismo valor que el jugador
+	Pos.Z = 200.0f;
 	SetActorLocation(Pos);
+
+	ConfigurarPatronesAtaque();
+
+	if (PatronesAtaque.Num() > 0 && TiempoEntreAtaques > 0.0f)
+	{
+		GetWorldTimerManager().SetTimer(
+			TimerAtaque,
+			this,
+			&ANave_Padre::EjecutarAtaque,
+			TiempoEntreAtaques,
+			true
+		);
+	}
 }
 
 void ANave_Padre::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	TiempoVida += DeltaTime;
 
 	if (bPerseguirJugador && Jugador != nullptr && !bEstaMuerta)
 	{
@@ -103,22 +129,42 @@ void ANave_Padre::MoverHaciaJugador(float DeltaTime)
 
 	if (Direccion.Size() <= DistanciaMinima)
 	{
-		HacerDanioAlJugador();
-		Morir();
+		AtacarPorContacto();
 		return;
 	}
 
-	Direccion.Normalize();
-	FVector NuevaUbicacion = GetActorLocation() +
-		Direccion * Velocidad * DeltaTime;
+	FVector DireccionMovimiento = CalcularDireccionMovimiento(DeltaTime);
 
-	// Mantener misma Z que el jugador para que las balas lo alcancen
+	FVector NuevaUbicacion =
+		GetActorLocation() +
+		DireccionMovimiento * Velocidad * DeltaTime;
+
 	NuevaUbicacion.Z = Jugador->GetActorLocation().Z;
+
 	SetActorLocation(NuevaUbicacion);
 
 	FRotator NuevaRotacion = Direccion.Rotation();
-	NuevaRotacion.Yaw += 90.0f;
 	SetActorRotation(NuevaRotacion);
+}
+
+FVector ANave_Padre::CalcularDireccionMovimiento(float DeltaTime)
+{
+	if (!Jugador)
+	{
+		return FVector::ZeroVector;
+	}
+
+	FVector Direccion =
+		Jugador->GetActorLocation() - GetActorLocation();
+
+	Direccion.Z = 0.0f;
+
+	if (Direccion.SizeSquared() <= 0.0f)
+	{
+		return FVector::ZeroVector;
+	}
+
+	return Direccion.GetSafeNormal();
 }
 
 void ANave_Padre::HacerDanioAlJugador()
@@ -144,4 +190,89 @@ void ANave_Padre::AplicarBuffBoss(float MultiplicadorVida, float MultiplicadorRe
 	MultiplicadorDanioRecibido *= MultiplicadorResistencia;
 
 	UE_LOG(LogTemp, Warning, TEXT("Enemigo buffeado por el boss final"));
+}
+
+void ANave_Padre::ConfigurarPatronesAtaque()
+{
+	PatronesAtaque.Empty();
+	PatronesAtaque.Add(EPatronAtaqueEnemigo::Embestida);
+}
+
+void ANave_Padre::EjecutarAtaque()
+{
+	if (!Jugador || bEstaMuerta || PatronesAtaque.Num() == 0)
+	{
+		return;
+	}
+
+	const float Distancia = FVector::Dist2D(GetActorLocation(), Jugador->GetActorLocation());
+
+	if (Distancia > DistanciaMaximaAtaque)
+	{
+		return;
+	}
+
+	EPatronAtaqueEnemigo PatronElegido = ElegirPatronAtaque();
+	EjecutarPatronAtaque(PatronElegido);
+}
+
+EPatronAtaqueEnemigo ANave_Padre::ElegirPatronAtaque() const
+{
+	const int32 Indice = FMath::RandRange(0, PatronesAtaque.Num() - 1);
+	return PatronesAtaque[Indice];
+}
+
+void ANave_Padre::EjecutarPatronAtaque(EPatronAtaqueEnemigo Patron)
+{
+	switch (Patron)
+	{
+	case EPatronAtaqueEnemigo::Embestida:
+		break;
+
+	default:
+		break;
+	}
+}
+
+void ANave_Padre::AtacarPorContacto()
+{
+	if (!PuedeAtacarPorContacto())
+	{
+		return;
+	}
+
+	TiempoUltimoAtaqueContacto = GetWorld()->GetTimeSeconds();
+
+	HacerDanioAlJugador();
+	Morir();
+}
+
+bool ANave_Padre::PuedeAtacarPorContacto() const
+{
+	if (!GetWorld())
+	{
+		return false;
+	}
+
+	return GetWorld()->GetTimeSeconds() - TiempoUltimoAtaqueContacto >= CooldownContacto;
+}
+
+void ANave_Padre::NotificarBuffBoss(float MultiplicadorVida, float MultiplicadorResistencia)
+{
+	OnBuffBossActivado.Broadcast(MultiplicadorVida, MultiplicadorResistencia);
+}
+
+void ANave_Padre::SuscribirseABuffBoss(ANave_Padre* Boss)
+{
+	if (!Boss || Boss == this)
+	{
+		return;
+	}
+
+	Boss->OnBuffBossActivado.RemoveAll(this);
+
+	Boss->OnBuffBossActivado.AddUObject(
+		this,
+		&ANave_Padre::AplicarBuffBoss
+	);
 }

@@ -1,45 +1,23 @@
-D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Development\ShooterNaves2025\Definitions.ShooterNaves2025.h
-D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Source\ShooterNaves2025\ShooterNaves2025GameMode.h
+D:\ShooterNaves2025\Intermediate\Build\Win64\UE4Editor\Development\ShooterNaves2025\Definitions.ShooterNaves2025.h
+D:\ShooterNaves2025\Source\ShooterNaves2025\ShooterNaves2025GameMode.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
-D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\ShooterNaves2025GameMode.generated.h
-D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Source\ShooterNaves2025\ShooterNaves2025Pawn.h
-D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Source\TObjectPool.h
-D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\ShooterNaves2025Pawn.generated.h
-D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Source\ShooterNaves2025\Public\Nave_Liviana.h
-D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Source\ShooterNaves2025\Public\Nave_Padre.h
-D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\Nave_Padre.generated.h
-D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\Nave_Liviana.generated.h
-D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Source\ShooterNaves2025\Public\Nave_Normal.h
-D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\Nave_Normal.generated.h
-D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Source\ShooterNaves2025\Public\Nave_Pesada.h
-D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\Nave_Pesada.generated.h
-C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet/GameplayStatics.h
-C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet/KismetSystemLibrary.h
-C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/PropertyAccessUtil.h
-C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\KismetSystemLibrary.generated.h
-C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Sound/DialogueTypes.h
-C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\DialogueTypes.generated.h
-C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet\GameplayStaticsTypes.h
-C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameplayStaticsTypes.generated.h
-C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameplayStatics.generated.h
-D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Source\ShooterNaves2025\Public\MiniBoss.h
-D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\MiniBoss.generated.h
-D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Source\ShooterNaves2025\Public\ShooterHUD.h
+D:\ShooterNaves2025\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\ShooterNaves2025GameMode.generated.h
+D:\ShooterNaves2025\Source\ShooterNaves2025\ShooterNaves2025Pawn.h
+D:\ShooterNaves2025\Source\TObjectPool.h
+D:\ShooterNaves2025\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\ShooterNaves2025Pawn.generated.h
+D:\ShooterNaves2025\Source\ShooterNaves2025\Public\MiniBoss.h
+D:\ShooterNaves2025\Source\ShooterNaves2025\Public\Nave_Padre.h
+D:\ShooterNaves2025\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\Nave_Padre.generated.h
+D:\ShooterNaves2025\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\MiniBoss.generated.h
+D:\ShooterNaves2025\Source\ShooterNaves2025\Public\ShooterHUD.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/HUD.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/HUDHitBox.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/DebugTextInfo.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\DebugTextInfo.generated.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\HUD.generated.h
-D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\ShooterHUD.generated.h
-D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Source\ShooterNaves2025\Public\BossFinal.h
-D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\BossFinal.generated.h
-D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Source\ShooterNaves2025\Public\EnemyFactory.h
-D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Source\ShooterNaves2025\Public\Nave_Kamikaze.h
-D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\Nave_Kamikaze.generated.h
-D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Source\ShooterNaves2025\Public\Nave_Francotirador.h
-D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\Nave_Francotirador.generated.h
-D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Source\ShooterNaves2025\Public\Nave_Tanque.h
-D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\Nave_Tanque.generated.h
+D:\ShooterNaves2025\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\ShooterHUD.generated.h
+D:\ShooterNaves2025\Source\ShooterNaves2025\Public\EnemySpawnFacade.h
+D:\ShooterNaves2025\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\EnemySpawnFacade.generated.h

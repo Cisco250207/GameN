@@ -3,6 +3,7 @@
 #include "GameFramework/GameModeBase.h"
 #include "ShooterNaves2025GameMode.generated.h"
 class AMiniBoss;
+class UEnemySpawnFacade;
 // GameMode principal del juego
 // Maneja los 6 niveles, las oleadas de enemigos,
 // el sistema de vidas y la logica de victoria/derrota
@@ -99,10 +100,6 @@ public:
     void CambiarEstado(EEstadoJuego NuevoEstado);
 
 private:
-    // ── CONTENEDOR DE ENEMIGOS ACTIVOS ────────────────────────────
-    UPROPERTY()
-    TArray<AActor*> EnemigosActivos;
-
     // Timer para spawnear enemigos gradualmente
     FTimerHandle TimerSpawn;
 
@@ -159,4 +156,7 @@ private:
     bool bBossFinalSpawned = false;
     bool bBossFinalDerrotado = false;
     class ABossFinal* BossFinalActual = nullptr;
+
+    UPROPERTY(VisibleAnywhere, Category = "Spawn")
+    UEnemySpawnFacade* EnemySpawnFacade;
 };

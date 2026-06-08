@@ -11,4 +11,8 @@ class SHOOTERNAVES2025_API ANave_Pesada : public ANave_Padre
 
 public:
 	ANave_Pesada();
+
+protected:
+	virtual void ConfigurarPatronesAtaque() override;
+	virtual void AtacarPorContacto() override;
 };

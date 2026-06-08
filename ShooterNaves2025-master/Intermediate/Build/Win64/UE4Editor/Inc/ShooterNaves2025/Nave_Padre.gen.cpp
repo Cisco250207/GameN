@@ -13,13 +13,82 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeNave_Padre() {}
 // Cross Module References
+	SHOOTERNAVES2025_API UEnum* Z_Construct_UEnum_ShooterNaves2025_EPatronAtaqueEnemigo();
+	UPackage* Z_Construct_UPackage__Script_ShooterNaves2025();
 	SHOOTERNAVES2025_API UClass* Z_Construct_UClass_ANave_Padre_NoRegister();
 	SHOOTERNAVES2025_API UClass* Z_Construct_UClass_ANave_Padre();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
-	UPackage* Z_Construct_UPackage__Script_ShooterNaves2025();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_APawn_NoRegister();
+	SHOOTERNAVES2025_API UClass* Z_Construct_UClass_UEnemyAttackFacade_NoRegister();
 // End Cross Module References
+	static UEnum* EPatronAtaqueEnemigo_StaticEnum()
+	{
+		static UEnum* Singleton = nullptr;
+		if (!Singleton)
+		{
+			Singleton = GetStaticEnum(Z_Construct_UEnum_ShooterNaves2025_EPatronAtaqueEnemigo, Z_Construct_UPackage__Script_ShooterNaves2025(), TEXT("EPatronAtaqueEnemigo"));
+		}
+		return Singleton;
+	}
+	template<> SHOOTERNAVES2025_API UEnum* StaticEnum<EPatronAtaqueEnemigo>()
+	{
+		return EPatronAtaqueEnemigo_StaticEnum();
+	}
+	static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_EPatronAtaqueEnemigo(EPatronAtaqueEnemigo_StaticEnum, TEXT("/Script/ShooterNaves2025"), TEXT("EPatronAtaqueEnemigo"), false, nullptr, nullptr);
+	uint32 Get_Z_Construct_UEnum_ShooterNaves2025_EPatronAtaqueEnemigo_Hash() { return 875957154U; }
+	UEnum* Z_Construct_UEnum_ShooterNaves2025_EPatronAtaqueEnemigo()
+	{
+#if WITH_HOT_RELOAD
+		UPackage* Outer = Z_Construct_UPackage__Script_ShooterNaves2025();
+		static UEnum* ReturnEnum = FindExistingEnumIfHotReloadOrDynamic(Outer, TEXT("EPatronAtaqueEnemigo"), 0, Get_Z_Construct_UEnum_ShooterNaves2025_EPatronAtaqueEnemigo_Hash(), false);
+#else
+		static UEnum* ReturnEnum = nullptr;
+#endif // WITH_HOT_RELOAD
+		if (!ReturnEnum)
+		{
+			static const UE4CodeGen_Private::FEnumeratorParam Enumerators[] = {
+				{ "EPatronAtaqueEnemigo::Embestida", (int64)EPatronAtaqueEnemigo::Embestida },
+				{ "EPatronAtaqueEnemigo::EmbestidaZigZag", (int64)EPatronAtaqueEnemigo::EmbestidaZigZag },
+				{ "EPatronAtaqueEnemigo::OndaChoque", (int64)EPatronAtaqueEnemigo::OndaChoque },
+				{ "EPatronAtaqueEnemigo::DisparoRecto", (int64)EPatronAtaqueEnemigo::DisparoRecto },
+				{ "EPatronAtaqueEnemigo::DisparoTriple", (int64)EPatronAtaqueEnemigo::DisparoTriple },
+				{ "EPatronAtaqueEnemigo::Rafaga", (int64)EPatronAtaqueEnemigo::Rafaga },
+				{ "EPatronAtaqueEnemigo::DisparoFrancotirador", (int64)EPatronAtaqueEnemigo::DisparoFrancotirador },
+				{ "EPatronAtaqueEnemigo::DisparoCargado", (int64)EPatronAtaqueEnemigo::DisparoCargado },
+				{ "EPatronAtaqueEnemigo::KamikazeExplosivo", (int64)EPatronAtaqueEnemigo::KamikazeExplosivo },
+			};
+#if WITH_METADATA
+			const UE4CodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[] = {
+				{ "DisparoCargado.Name", "EPatronAtaqueEnemigo::DisparoCargado" },
+				{ "DisparoFrancotirador.Name", "EPatronAtaqueEnemigo::DisparoFrancotirador" },
+				{ "DisparoRecto.Name", "EPatronAtaqueEnemigo::DisparoRecto" },
+				{ "DisparoTriple.Name", "EPatronAtaqueEnemigo::DisparoTriple" },
+				{ "Embestida.Name", "EPatronAtaqueEnemigo::Embestida" },
+				{ "EmbestidaZigZag.Name", "EPatronAtaqueEnemigo::EmbestidaZigZag" },
+				{ "KamikazeExplosivo.Name", "EPatronAtaqueEnemigo::KamikazeExplosivo" },
+				{ "ModuleRelativePath", "Public/Nave_Padre.h" },
+				{ "OndaChoque.Name", "EPatronAtaqueEnemigo::OndaChoque" },
+				{ "Rafaga.Name", "EPatronAtaqueEnemigo::Rafaga" },
+			};
+#endif
+			static const UE4CodeGen_Private::FEnumParams EnumParams = {
+				(UObject*(*)())Z_Construct_UPackage__Script_ShooterNaves2025,
+				nullptr,
+				"EPatronAtaqueEnemigo",
+				"EPatronAtaqueEnemigo",
+				Enumerators,
+				UE_ARRAY_COUNT(Enumerators),
+				RF_Public|RF_Transient|RF_MarkAsNative,
+				EEnumFlags::None,
+				UE4CodeGen_Private::EDynamicType::NotDynamic,
+				(uint8)UEnum::ECppForm::EnumClass,
+				METADATA_PARAMS(Enum_MetaDataParams, UE_ARRAY_COUNT(Enum_MetaDataParams))
+			};
+			UE4CodeGen_Private::ConstructUEnum(ReturnEnum, EnumParams);
+		}
+		return ReturnEnum;
+	}
 	DEFINE_FUNCTION(ANave_Padre::execAplicarBuffBoss)
 	{
 		P_GET_PROPERTY(FFloatProperty,Z_Param_MultiplicadorVida);
@@ -200,14 +269,56 @@ void EmptyLinkFunctionForGeneratedCodeNave_Padre() {}
 		static void NewProp_bEsBossFinal_SetBit(void* Obj);
 		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bEsBossFinal;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Jugador_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Jugador;
-#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_bBuffActivo_MetaData[];
 #endif
 		static void NewProp_bBuffActivo_SetBit(void* Obj);
 		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bBuffActivo;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Jugador_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Jugador;
+		static const UE4CodeGen_Private::FBytePropertyParams NewProp_PatronesAtaque_Inner_Underlying;
+		static const UE4CodeGen_Private::FEnumPropertyParams NewProp_PatronesAtaque_Inner;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_PatronesAtaque_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_PatronesAtaque;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_TiempoEntreAtaques_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_TiempoEntreAtaques;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_DistanciaMaximaAtaque_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_DistanciaMaximaAtaque;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_AttackFacade_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_AttackFacade;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CantidadProyectilesPoolAtaque_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_CantidadProyectilesPoolAtaque;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_TiempoUltimoAtaqueContacto_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_TiempoUltimoAtaqueContacto;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CooldownContacto_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_CooldownContacto;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_TiempoVida_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_TiempoVida;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_AmplitudZigZag_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_AmplitudZigZag;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_FrecuenciaZigZag_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_FrecuenciaZigZag;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -315,12 +426,6 @@ void EmptyLinkFunctionForGeneratedCodeNave_Padre() {}
 	}
 	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ANave_Padre_Statics::NewProp_bEsBossFinal = { "bEsBossFinal", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(ANave_Padre), &Z_Construct_UClass_ANave_Padre_Statics::NewProp_bEsBossFinal_SetBit, METADATA_PARAMS(Z_Construct_UClass_ANave_Padre_Statics::NewProp_bEsBossFinal_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANave_Padre_Statics::NewProp_bEsBossFinal_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANave_Padre_Statics::NewProp_Jugador_MetaData[] = {
-		{ "ModuleRelativePath", "Public/Nave_Padre.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ANave_Padre_Statics::NewProp_Jugador = { "Jugador", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANave_Padre, Jugador), Z_Construct_UClass_APawn_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ANave_Padre_Statics::NewProp_Jugador_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANave_Padre_Statics::NewProp_Jugador_MetaData)) };
-#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANave_Padre_Statics::NewProp_bBuffActivo_MetaData[] = {
 		{ "Category", "Buff" },
 		{ "ModuleRelativePath", "Public/Nave_Padre.h" },
@@ -331,6 +436,85 @@ void EmptyLinkFunctionForGeneratedCodeNave_Padre() {}
 		((ANave_Padre*)Obj)->bBuffActivo = 1;
 	}
 	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ANave_Padre_Statics::NewProp_bBuffActivo = { "bBuffActivo", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(ANave_Padre), &Z_Construct_UClass_ANave_Padre_Statics::NewProp_bBuffActivo_SetBit, METADATA_PARAMS(Z_Construct_UClass_ANave_Padre_Statics::NewProp_bBuffActivo_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANave_Padre_Statics::NewProp_bBuffActivo_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANave_Padre_Statics::NewProp_Jugador_MetaData[] = {
+		{ "ModuleRelativePath", "Public/Nave_Padre.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ANave_Padre_Statics::NewProp_Jugador = { "Jugador", nullptr, (EPropertyFlags)0x0010000000000000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANave_Padre, Jugador), Z_Construct_UClass_APawn_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ANave_Padre_Statics::NewProp_Jugador_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANave_Padre_Statics::NewProp_Jugador_MetaData)) };
+	const UE4CodeGen_Private::FBytePropertyParams Z_Construct_UClass_ANave_Padre_Statics::NewProp_PatronesAtaque_Inner_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FEnumPropertyParams Z_Construct_UClass_ANave_Padre_Statics::NewProp_PatronesAtaque_Inner = { "PatronesAtaque", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UEnum_ShooterNaves2025_EPatronAtaqueEnemigo, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANave_Padre_Statics::NewProp_PatronesAtaque_MetaData[] = {
+		{ "Category", "Ataque" },
+		{ "ModuleRelativePath", "Public/Nave_Padre.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ANave_Padre_Statics::NewProp_PatronesAtaque = { "PatronesAtaque", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANave_Padre, PatronesAtaque), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_ANave_Padre_Statics::NewProp_PatronesAtaque_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANave_Padre_Statics::NewProp_PatronesAtaque_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANave_Padre_Statics::NewProp_TiempoEntreAtaques_MetaData[] = {
+		{ "Category", "Ataque" },
+		{ "ModuleRelativePath", "Public/Nave_Padre.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ANave_Padre_Statics::NewProp_TiempoEntreAtaques = { "TiempoEntreAtaques", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANave_Padre, TiempoEntreAtaques), METADATA_PARAMS(Z_Construct_UClass_ANave_Padre_Statics::NewProp_TiempoEntreAtaques_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANave_Padre_Statics::NewProp_TiempoEntreAtaques_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANave_Padre_Statics::NewProp_DistanciaMaximaAtaque_MetaData[] = {
+		{ "Category", "Ataque" },
+		{ "ModuleRelativePath", "Public/Nave_Padre.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ANave_Padre_Statics::NewProp_DistanciaMaximaAtaque = { "DistanciaMaximaAtaque", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANave_Padre, DistanciaMaximaAtaque), METADATA_PARAMS(Z_Construct_UClass_ANave_Padre_Statics::NewProp_DistanciaMaximaAtaque_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANave_Padre_Statics::NewProp_DistanciaMaximaAtaque_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANave_Padre_Statics::NewProp_AttackFacade_MetaData[] = {
+		{ "Category", "Ataque" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Public/Nave_Padre.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ANave_Padre_Statics::NewProp_AttackFacade = { "AttackFacade", nullptr, (EPropertyFlags)0x00200800000a0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANave_Padre, AttackFacade), Z_Construct_UClass_UEnemyAttackFacade_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ANave_Padre_Statics::NewProp_AttackFacade_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANave_Padre_Statics::NewProp_AttackFacade_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANave_Padre_Statics::NewProp_CantidadProyectilesPoolAtaque_MetaData[] = {
+		{ "Category", "Ataque" },
+		{ "ModuleRelativePath", "Public/Nave_Padre.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_ANave_Padre_Statics::NewProp_CantidadProyectilesPoolAtaque = { "CantidadProyectilesPoolAtaque", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANave_Padre, CantidadProyectilesPoolAtaque), METADATA_PARAMS(Z_Construct_UClass_ANave_Padre_Statics::NewProp_CantidadProyectilesPoolAtaque_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANave_Padre_Statics::NewProp_CantidadProyectilesPoolAtaque_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANave_Padre_Statics::NewProp_TiempoUltimoAtaqueContacto_MetaData[] = {
+		{ "Category", "Ataque" },
+		{ "ModuleRelativePath", "Public/Nave_Padre.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ANave_Padre_Statics::NewProp_TiempoUltimoAtaqueContacto = { "TiempoUltimoAtaqueContacto", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANave_Padre, TiempoUltimoAtaqueContacto), METADATA_PARAMS(Z_Construct_UClass_ANave_Padre_Statics::NewProp_TiempoUltimoAtaqueContacto_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANave_Padre_Statics::NewProp_TiempoUltimoAtaqueContacto_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANave_Padre_Statics::NewProp_CooldownContacto_MetaData[] = {
+		{ "Category", "Ataque" },
+		{ "ModuleRelativePath", "Public/Nave_Padre.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ANave_Padre_Statics::NewProp_CooldownContacto = { "CooldownContacto", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANave_Padre, CooldownContacto), METADATA_PARAMS(Z_Construct_UClass_ANave_Padre_Statics::NewProp_CooldownContacto_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANave_Padre_Statics::NewProp_CooldownContacto_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANave_Padre_Statics::NewProp_TiempoVida_MetaData[] = {
+		{ "Category", "Movimiento" },
+		{ "ModuleRelativePath", "Public/Nave_Padre.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ANave_Padre_Statics::NewProp_TiempoVida = { "TiempoVida", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANave_Padre, TiempoVida), METADATA_PARAMS(Z_Construct_UClass_ANave_Padre_Statics::NewProp_TiempoVida_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANave_Padre_Statics::NewProp_TiempoVida_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANave_Padre_Statics::NewProp_AmplitudZigZag_MetaData[] = {
+		{ "Category", "Movimiento" },
+		{ "ModuleRelativePath", "Public/Nave_Padre.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ANave_Padre_Statics::NewProp_AmplitudZigZag = { "AmplitudZigZag", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANave_Padre, AmplitudZigZag), METADATA_PARAMS(Z_Construct_UClass_ANave_Padre_Statics::NewProp_AmplitudZigZag_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANave_Padre_Statics::NewProp_AmplitudZigZag_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ANave_Padre_Statics::NewProp_FrecuenciaZigZag_MetaData[] = {
+		{ "Category", "Movimiento" },
+		{ "ModuleRelativePath", "Public/Nave_Padre.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ANave_Padre_Statics::NewProp_FrecuenciaZigZag = { "FrecuenciaZigZag", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ANave_Padre, FrecuenciaZigZag), METADATA_PARAMS(Z_Construct_UClass_ANave_Padre_Statics::NewProp_FrecuenciaZigZag_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ANave_Padre_Statics::NewProp_FrecuenciaZigZag_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ANave_Padre_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANave_Padre_Statics::NewProp_Vida,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANave_Padre_Statics::NewProp_Velocidad,
@@ -342,8 +526,20 @@ void EmptyLinkFunctionForGeneratedCodeNave_Padre() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANave_Padre_Statics::NewProp_bEsMiniBoss,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANave_Padre_Statics::NewProp_MultiplicadorDanioRecibido,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANave_Padre_Statics::NewProp_bEsBossFinal,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANave_Padre_Statics::NewProp_Jugador,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANave_Padre_Statics::NewProp_bBuffActivo,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANave_Padre_Statics::NewProp_Jugador,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANave_Padre_Statics::NewProp_PatronesAtaque_Inner_Underlying,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANave_Padre_Statics::NewProp_PatronesAtaque_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANave_Padre_Statics::NewProp_PatronesAtaque,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANave_Padre_Statics::NewProp_TiempoEntreAtaques,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANave_Padre_Statics::NewProp_DistanciaMaximaAtaque,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANave_Padre_Statics::NewProp_AttackFacade,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANave_Padre_Statics::NewProp_CantidadProyectilesPoolAtaque,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANave_Padre_Statics::NewProp_TiempoUltimoAtaqueContacto,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANave_Padre_Statics::NewProp_CooldownContacto,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANave_Padre_Statics::NewProp_TiempoVida,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANave_Padre_Statics::NewProp_AmplitudZigZag,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ANave_Padre_Statics::NewProp_FrecuenciaZigZag,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ANave_Padre_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ANave_Padre>::IsAbstract,
@@ -372,7 +568,7 @@ void EmptyLinkFunctionForGeneratedCodeNave_Padre() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ANave_Padre, 1161679729);
+	IMPLEMENT_CLASS(ANave_Padre, 3605740349);
 	template<> SHOOTERNAVES2025_API UClass* StaticClass<ANave_Padre>()
 	{
 		return ANave_Padre::StaticClass();

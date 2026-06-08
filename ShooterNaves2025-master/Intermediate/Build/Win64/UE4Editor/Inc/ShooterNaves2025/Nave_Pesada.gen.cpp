@@ -71,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeNave_Pesada() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ANave_Pesada, 833762187);
+	IMPLEMENT_CLASS(ANave_Pesada, 1348114796);
 	template<> SHOOTERNAVES2025_API UClass* StaticClass<ANave_Pesada>()
 	{
 		return ANave_Pesada::StaticClass();

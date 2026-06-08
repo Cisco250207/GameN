@@ -11,6 +11,10 @@ class SHOOTERNAVES2025_API ANave_Kamikaze : public ANave_Padre
 {
 	GENERATED_BODY()
 
+protected:
+	virtual void ConfigurarPatronesAtaque() override;
+	virtual void AtacarPorContacto() override;
+
 public:
 	// Declaramos el constructor aquí adentro
 	ANave_Kamikaze();

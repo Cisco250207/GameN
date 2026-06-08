@@ -14,18 +14,18 @@ enum class EEstadoJuego : uint8;
 #endif
 #define SHOOTERNAVES2025_ShooterNaves2025GameMode_generated_h
 
-#define ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_22_SPARSE_DATA
-#define ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_22_RPC_WRAPPERS \
+#define ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_23_SPARSE_DATA
+#define ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_23_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execCambiarEstado);
 
 
-#define ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
+#define ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_23_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execCambiarEstado);
 
 
-#define ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_22_INCLASS_NO_PURE_DECLS \
+#define ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_23_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAShooterNaves2025GameMode(); \
 	friend struct Z_Construct_UClass_AShooterNaves2025GameMode_Statics; \
@@ -34,7 +34,7 @@ public: \
 	DECLARE_SERIALIZER(AShooterNaves2025GameMode)
 
 
-#define ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_22_INCLASS \
+#define ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_23_INCLASS \
 private: \
 	static void StaticRegisterNativesAShooterNaves2025GameMode(); \
 	friend struct Z_Construct_UClass_AShooterNaves2025GameMode_Statics; \
@@ -43,7 +43,7 @@ public: \
 	DECLARE_SERIALIZER(AShooterNaves2025GameMode)
 
 
-#define ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_22_STANDARD_CONSTRUCTORS \
+#define ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_23_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	SHOOTERNAVES2025_API AShooterNaves2025GameMode(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AShooterNaves2025GameMode) \
@@ -56,7 +56,7 @@ private: \
 public:
 
 
-#define ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_22_ENHANCED_CONSTRUCTORS \
+#define ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_23_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	SHOOTERNAVES2025_API AShooterNaves2025GameMode(AShooterNaves2025GameMode&&); \
@@ -67,31 +67,31 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AShooterNaves2025GameMode)
 
 
-#define ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_22_PRIVATE_PROPERTY_OFFSET \
-	FORCEINLINE static uint32 __PPO__EnemigosActivos() { return STRUCT_OFFSET(AShooterNaves2025GameMode, EnemigosActivos); }
+#define ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_23_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__EnemySpawnFacade() { return STRUCT_OFFSET(AShooterNaves2025GameMode, EnemySpawnFacade); }
 
 
-#define ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_18_PROLOG
-#define ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_22_GENERATED_BODY_LEGACY \
+#define ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_19_PROLOG
+#define ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_23_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_22_PRIVATE_PROPERTY_OFFSET \
-	ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_22_SPARSE_DATA \
-	ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_22_RPC_WRAPPERS \
-	ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_22_INCLASS \
-	ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_22_STANDARD_CONSTRUCTORS \
+	ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_23_PRIVATE_PROPERTY_OFFSET \
+	ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_23_SPARSE_DATA \
+	ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_23_RPC_WRAPPERS \
+	ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_23_INCLASS \
+	ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_23_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_22_GENERATED_BODY \
+#define ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_23_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_22_PRIVATE_PROPERTY_OFFSET \
-	ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_22_SPARSE_DATA \
-	ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
-	ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_22_INCLASS_NO_PURE_DECLS \
-	ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_22_ENHANCED_CONSTRUCTORS \
+	ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_23_PRIVATE_PROPERTY_OFFSET \
+	ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_23_SPARSE_DATA \
+	ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_23_RPC_WRAPPERS_NO_PURE_DECLS \
+	ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_23_INCLASS_NO_PURE_DECLS \
+	ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025GameMode_h_23_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -99,7 +99,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> SHOOTERNAVES2025_API UClass* StaticClass<class AShooterNaves2025GameMode>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025GameMode_h
+#define CURRENT_FILE_ID ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025GameMode_h
 
 
 #define FOREACH_ENUM_EESTADOJUEGO(op) \

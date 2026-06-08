@@ -4,6 +4,24 @@
 #include "GameFramework/Actor.h"
 #include "Nave_Padre.generated.h"
 
+class UEnemyAttackFacade;
+
+UENUM()
+enum class EPatronAtaqueEnemigo : uint8
+{
+	Embestida,
+	EmbestidaZigZag,
+	OndaChoque,
+	DisparoRecto,
+	DisparoTriple,
+	Rafaga,
+	DisparoFrancotirador,
+	DisparoCargado,
+	KamikazeExplosivo
+};
+
+DECLARE_MULTICAST_DELEGATE_TwoParams(FOnBuffBossActivado, float, float);
+
 UCLASS()
 class SHOOTERNAVES2025_API ANave_Padre : public AActor
 {
@@ -12,11 +30,24 @@ class SHOOTERNAVES2025_API ANave_Padre : public AActor
 public:
 	ANave_Padre();
 
-protected:
-	virtual void BeginPlay() override;
-
-public:
 	virtual void Tick(float DeltaTime) override;
+
+	FOnBuffBossActivado OnBuffBossActivado;
+
+	void NotificarBuffBoss(float MultiplicadorVida, float MultiplicadorResistencia);
+	void SuscribirseABuffBoss(ANave_Padre* Boss);
+
+	UFUNCTION(BlueprintCallable)
+	virtual void RecibirDanio(float CantidadDanio);
+
+	UFUNCTION(BlueprintCallable)
+	virtual void Morir();
+
+	void MoverHaciaJugador(float DeltaTime);
+	void HacerDanioAlJugador();
+
+	UFUNCTION(BlueprintCallable)
+	void AplicarBuffBoss(float MultiplicadorVida, float MultiplicadorResistencia);
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stats")
 	float Vida = 100.0f;
@@ -48,22 +79,55 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	bool bEsBossFinal = false;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Buff")
+	bool bBuffActivo = false;
+
 	UPROPERTY()
 	class APawn* Jugador;
 
-	UFUNCTION(BlueprintCallable)
-	virtual void RecibirDanio(float CantidadDanio);
+protected:
+	virtual void BeginPlay() override;
 
-	UFUNCTION(BlueprintCallable)
-	virtual void Morir();
+	FTimerHandle TimerAtaque;
 
-	void MoverHaciaJugador(float DeltaTime);
+	UPROPERTY(EditAnywhere, Category = "Ataque")
+	TArray<EPatronAtaqueEnemigo> PatronesAtaque;
 
-	void HacerDanioAlJugador(); UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Buff")
-	bool bBuffActivo = false;
+	UPROPERTY(EditAnywhere, Category = "Ataque")
+	float TiempoEntreAtaques = 2.0f;
 
-	UFUNCTION(BlueprintCallable)
-	void AplicarBuffBoss(float MultiplicadorVida, float MultiplicadorResistencia);
+	UPROPERTY(EditAnywhere, Category = "Ataque")
+	float DistanciaMaximaAtaque = 1200.0f;
 
+	UPROPERTY(VisibleAnywhere, Category = "Ataque")
+	UEnemyAttackFacade* AttackFacade;
 
+	UPROPERTY(EditAnywhere, Category = "Ataque")
+	int32 CantidadProyectilesPoolAtaque = 10;
+
+	UPROPERTY(EditAnywhere, Category = "Ataque")
+	float TiempoUltimoAtaqueContacto = -100.0f;
+
+	UPROPERTY(EditAnywhere, Category = "Ataque")
+	float CooldownContacto = 1.0f;
+
+	UPROPERTY(EditAnywhere, Category = "Movimiento")
+	float TiempoVida = 0.0f;
+
+	UPROPERTY(EditAnywhere, Category = "Movimiento")
+	float AmplitudZigZag = 120.0f;
+
+	UPROPERTY(EditAnywhere, Category = "Movimiento")
+	float FrecuenciaZigZag = 5.0f;
+
+	virtual void ConfigurarPatronesAtaque();
+	virtual void EjecutarAtaque();
+	virtual EPatronAtaqueEnemigo ElegirPatronAtaque() const;
+	virtual void EjecutarPatronAtaque(EPatronAtaqueEnemigo Patron);
+
+	virtual FVector CalcularDireccionMovimiento(float DeltaTime);
+
+	virtual void AtacarPorContacto();
+
+	bool PuedeAtacarPorContacto() const;
 };

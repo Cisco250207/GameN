@@ -1,8 +1,8 @@
 {
 	"SourceFiles": [
-		"D:\\PROYECTOS\\NProject\\ACTUALPROJECT\\ShooterNaves2025-master\\Source\\ShooterNaves2025\\ShooterNaves2025.Build.cs",
-		"D:\\PROYECTOS\\NProject\\ACTUALPROJECT\\ShooterNaves2025-master\\Source\\ShooterNaves2025.Target.cs",
-		"D:\\PROYECTOS\\NProject\\ACTUALPROJECT\\ShooterNaves2025-master\\Source\\ShooterNaves2025Editor.Target.cs"
+		"D:\\ShooterNaves2025\\Source\\ShooterNaves2025\\ShooterNaves2025.Build.cs",
+		"D:\\ShooterNaves2025\\Source\\ShooterNaves2025.Target.cs",
+		"D:\\ShooterNaves2025\\Source\\ShooterNaves2025Editor.Target.cs"
 	],
 	"EngineVersion": "4.27.2"
 }

@@ -18,22 +18,22 @@ struct FHitResult;
 #endif
 #define SHOOTERNAVES2025_ProyectilEnemigo_generated_h
 
-#define ShooterNaves2025_master_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_SPARSE_DATA
-#define ShooterNaves2025_master_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_RPC_WRAPPERS \
+#define ShooterNaves2025_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_SPARSE_DATA
+#define ShooterNaves2025_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execDesactivarProyectil); \
 	DECLARE_FUNCTION(execActivarProyectil); \
 	DECLARE_FUNCTION(execOnOverlap);
 
 
-#define ShooterNaves2025_master_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
+#define ShooterNaves2025_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execDesactivarProyectil); \
 	DECLARE_FUNCTION(execActivarProyectil); \
 	DECLARE_FUNCTION(execOnOverlap);
 
 
-#define ShooterNaves2025_master_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_INCLASS_NO_PURE_DECLS \
+#define ShooterNaves2025_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAProyectilEnemigo(); \
 	friend struct Z_Construct_UClass_AProyectilEnemigo_Statics; \
@@ -42,7 +42,7 @@ public: \
 	DECLARE_SERIALIZER(AProyectilEnemigo)
 
 
-#define ShooterNaves2025_master_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_INCLASS \
+#define ShooterNaves2025_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_INCLASS \
 private: \
 	static void StaticRegisterNativesAProyectilEnemigo(); \
 	friend struct Z_Construct_UClass_AProyectilEnemigo_Statics; \
@@ -51,7 +51,7 @@ public: \
 	DECLARE_SERIALIZER(AProyectilEnemigo)
 
 
-#define ShooterNaves2025_master_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_STANDARD_CONSTRUCTORS \
+#define ShooterNaves2025_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AProyectilEnemigo(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AProyectilEnemigo) \
@@ -64,7 +64,7 @@ private: \
 public:
 
 
-#define ShooterNaves2025_master_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_ENHANCED_CONSTRUCTORS \
+#define ShooterNaves2025_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AProyectilEnemigo(AProyectilEnemigo&&); \
@@ -75,31 +75,31 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AProyectilEnemigo)
 
 
-#define ShooterNaves2025_master_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_PRIVATE_PROPERTY_OFFSET \
+#define ShooterNaves2025_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__bActivo() { return STRUCT_OFFSET(AProyectilEnemigo, bActivo); }
 
 
-#define ShooterNaves2025_master_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_8_PROLOG
-#define ShooterNaves2025_master_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_GENERATED_BODY_LEGACY \
+#define ShooterNaves2025_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_8_PROLOG
+#define ShooterNaves2025_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	ShooterNaves2025_master_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_PRIVATE_PROPERTY_OFFSET \
-	ShooterNaves2025_master_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_SPARSE_DATA \
-	ShooterNaves2025_master_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_RPC_WRAPPERS \
-	ShooterNaves2025_master_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_INCLASS \
-	ShooterNaves2025_master_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_STANDARD_CONSTRUCTORS \
+	ShooterNaves2025_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_PRIVATE_PROPERTY_OFFSET \
+	ShooterNaves2025_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_SPARSE_DATA \
+	ShooterNaves2025_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_RPC_WRAPPERS \
+	ShooterNaves2025_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_INCLASS \
+	ShooterNaves2025_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define ShooterNaves2025_master_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_GENERATED_BODY \
+#define ShooterNaves2025_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	ShooterNaves2025_master_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_PRIVATE_PROPERTY_OFFSET \
-	ShooterNaves2025_master_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_SPARSE_DATA \
-	ShooterNaves2025_master_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
-	ShooterNaves2025_master_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_INCLASS_NO_PURE_DECLS \
-	ShooterNaves2025_master_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_ENHANCED_CONSTRUCTORS \
+	ShooterNaves2025_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_PRIVATE_PROPERTY_OFFSET \
+	ShooterNaves2025_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_SPARSE_DATA \
+	ShooterNaves2025_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
+	ShooterNaves2025_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_INCLASS_NO_PURE_DECLS \
+	ShooterNaves2025_Source_ShooterNaves2025_Public_ProyectilEnemigo_h_11_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -107,7 +107,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> SHOOTERNAVES2025_API UClass* StaticClass<class AProyectilEnemigo>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID ShooterNaves2025_master_Source_ShooterNaves2025_Public_ProyectilEnemigo_h
+#define CURRENT_FILE_ID ShooterNaves2025_Source_ShooterNaves2025_Public_ProyectilEnemigo_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

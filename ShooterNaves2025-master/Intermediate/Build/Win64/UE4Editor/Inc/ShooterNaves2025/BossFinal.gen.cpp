@@ -71,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeBossFinal() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABossFinal, 4032522931);
+	IMPLEMENT_CLASS(ABossFinal, 3408684287);
 	template<> SHOOTERNAVES2025_API UClass* StaticClass<ABossFinal>()
 	{
 		return ABossFinal::StaticClass();

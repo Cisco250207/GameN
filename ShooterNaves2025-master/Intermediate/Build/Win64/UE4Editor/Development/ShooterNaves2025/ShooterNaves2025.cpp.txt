@@ -1,2 +1,2 @@
-D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Development\ShooterNaves2025\Definitions.ShooterNaves2025.h
-D:\PROYECTOS\NProject\ACTUALPROJECT\ShooterNaves2025-master\Source\ShooterNaves2025\ShooterNaves2025.h
+D:\ShooterNaves2025\Intermediate\Build\Win64\UE4Editor\Development\ShooterNaves2025\Definitions.ShooterNaves2025.h
+D:\ShooterNaves2025\Source\ShooterNaves2025\ShooterNaves2025.h

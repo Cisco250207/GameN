@@ -71,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeNave_Liviana() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ANave_Liviana, 1174544161);
+	IMPLEMENT_CLASS(ANave_Liviana, 2013081358);
 	template<> SHOOTERNAVES2025_API UClass* StaticClass<ANave_Liviana>()
 	{
 		return ANave_Liviana::StaticClass();

@@ -1,9 +1,5 @@
 #include "Nave_Tanque.h"
-#include "ProyectilEnemigo.h"
-#include "GameFramework/Pawn.h"
-#include "GameFramework/ProjectileMovementComponent.h"
-#include "TimerManager.h"
-#include "Engine/World.h"
+#include "EnemyAttackFacade.h"
 
 ANave_Tanque::ANave_Tanque()
 {
@@ -14,51 +10,40 @@ ANave_Tanque::ANave_Tanque()
 	MultiplicadorDanioRecibido = 0.75f;
 }
 
-void ANave_Tanque::BeginPlay()
+void ANave_Tanque::ConfigurarPatronesAtaque()
 {
-	Super::BeginPlay();
+	PatronesAtaque.Empty();
+	PatronesAtaque.Add(EPatronAtaqueEnemigo::DisparoRecto);
+	PatronesAtaque.Add(EPatronAtaqueEnemigo::DisparoTriple);
+	PatronesAtaque.Add(EPatronAtaqueEnemigo::Rafaga);
 
-	PoolProyectiles.Inicializar(
-		GetWorld(),
-		CantidadProyectilesPool,
-		FVector(0.f, 0.f, -5000.f)
-	);
-
-	GetWorldTimerManager().SetTimer(
-		TimerDisparo,
-		this,
-		&ANave_Tanque::Disparar,
-		TiempoEntreDisparos,
-		true
-	);
+	TiempoEntreAtaques = 3.0f;
+	DistanciaMaximaAtaque = 1300.0f;
+	CantidadProyectilesPoolAtaque = 12;
 }
 
-void ANave_Tanque::Disparar()
+void ANave_Tanque::EjecutarPatronAtaque(EPatronAtaqueEnemigo Patron)
 {
-	if (!Jugador || bEstaMuerta)
+	if (!AttackFacade)
 	{
 		return;
 	}
 
-	FVector Direccion = Jugador->GetActorLocation() - GetActorLocation();
-	Direccion.Z = 0.0f;
-
-	if (Direccion.SizeSquared() <= 0.0f)
+	switch (Patron)
 	{
-		return;
-	}
+	case EPatronAtaqueEnemigo::DisparoRecto:
+		AttackFacade->DispararRecto(35.0f, 1400.0f, 0.35f, 140.0f);
+		break;
 
-	FRotator RotacionDisparo = Direccion.Rotation();
-	FVector SpawnLocation = GetActorLocation() + RotacionDisparo.RotateVector(FVector(140.0f, 0.0f, 0.0f));
+	case EPatronAtaqueEnemigo::DisparoTriple:
+		AttackFacade->DispararTriple(30.0f, 1300.0f, 0.3f, 140.0f);
+		break;
 
-	AProyectilEnemigo* Bala = PoolProyectiles.ObtenerDisponible(GetWorld());
+	case EPatronAtaqueEnemigo::Rafaga:
+		AttackFacade->DispararRafaga(25.0f, 1600.0f, 0.25f, 140.0f);
+		break;
 
-	if (Bala)
-	{
-		Bala->SetOwner(this);
-		Bala->Danio = 35.0f;
-		Bala->MovimientoProyectil->InitialSpeed = 1800.0f;
-		Bala->MovimientoProyectil->MaxSpeed = 1800.0f;
-		Bala->ActivarProyectil(SpawnLocation, RotacionDisparo);
+	default:
+		break;
 	}
 }

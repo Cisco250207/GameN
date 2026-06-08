@@ -71,7 +71,7 @@ void EmptyLinkFunctionForGeneratedCodeNave_Kamikaze() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ANave_Kamikaze, 961314507);
+	IMPLEMENT_CLASS(ANave_Kamikaze, 517617234);
 	template<> SHOOTERNAVES2025_API UClass* StaticClass<ANave_Kamikaze>()
 	{
 		return ANave_Kamikaze::StaticClass();

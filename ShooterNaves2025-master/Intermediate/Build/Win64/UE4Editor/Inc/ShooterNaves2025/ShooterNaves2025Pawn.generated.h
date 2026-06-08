@@ -13,8 +13,8 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define SHOOTERNAVES2025_ShooterNaves2025Pawn_generated_h
 
-#define ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_SPARSE_DATA
-#define ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_RPC_WRAPPERS \
+#define ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_SPARSE_DATA
+#define ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execMorir); \
 	DECLARE_FUNCTION(execRecibirDanio); \
@@ -23,7 +23,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	DECLARE_FUNCTION(execCurar);
 
 
-#define ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+#define ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execMorir); \
 	DECLARE_FUNCTION(execRecibirDanio); \
@@ -32,7 +32,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	DECLARE_FUNCTION(execCurar);
 
 
-#define ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_INCLASS_NO_PURE_DECLS \
+#define ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAShooterNaves2025Pawn(); \
 	friend struct Z_Construct_UClass_AShooterNaves2025Pawn_Statics; \
@@ -41,7 +41,7 @@ public: \
 	DECLARE_SERIALIZER(AShooterNaves2025Pawn)
 
 
-#define ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_INCLASS \
+#define ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_INCLASS \
 private: \
 	static void StaticRegisterNativesAShooterNaves2025Pawn(); \
 	friend struct Z_Construct_UClass_AShooterNaves2025Pawn_Statics; \
@@ -50,7 +50,7 @@ public: \
 	DECLARE_SERIALIZER(AShooterNaves2025Pawn)
 
 
-#define ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_STANDARD_CONSTRUCTORS \
+#define ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AShooterNaves2025Pawn(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AShooterNaves2025Pawn) \
@@ -63,7 +63,7 @@ private: \
 public:
 
 
-#define ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_ENHANCED_CONSTRUCTORS \
+#define ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AShooterNaves2025Pawn(AShooterNaves2025Pawn&&); \
@@ -74,33 +74,33 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AShooterNaves2025Pawn)
 
 
-#define ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_PRIVATE_PROPERTY_OFFSET \
+#define ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__ShipMeshComponent() { return STRUCT_OFFSET(AShooterNaves2025Pawn, ShipMeshComponent); } \
 	FORCEINLINE static uint32 __PPO__CameraComponent() { return STRUCT_OFFSET(AShooterNaves2025Pawn, CameraComponent); } \
 	FORCEINLINE static uint32 __PPO__CameraBoom() { return STRUCT_OFFSET(AShooterNaves2025Pawn, CameraBoom); }
 
 
-#define ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_10_PROLOG
-#define ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_GENERATED_BODY_LEGACY \
+#define ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_10_PROLOG
+#define ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_PRIVATE_PROPERTY_OFFSET \
-	ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_SPARSE_DATA \
-	ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_RPC_WRAPPERS \
-	ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_INCLASS \
-	ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_STANDARD_CONSTRUCTORS \
+	ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_PRIVATE_PROPERTY_OFFSET \
+	ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_SPARSE_DATA \
+	ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_RPC_WRAPPERS \
+	ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_INCLASS \
+	ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_GENERATED_BODY \
+#define ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_PRIVATE_PROPERTY_OFFSET \
-	ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_SPARSE_DATA \
-	ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
-	ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_INCLASS_NO_PURE_DECLS \
-	ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_ENHANCED_CONSTRUCTORS \
+	ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_PRIVATE_PROPERTY_OFFSET \
+	ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_SPARSE_DATA \
+	ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+	ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_INCLASS_NO_PURE_DECLS \
+	ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025Pawn_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -108,7 +108,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> SHOOTERNAVES2025_API UClass* StaticClass<class AShooterNaves2025Pawn>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID ShooterNaves2025_master_Source_ShooterNaves2025_ShooterNaves2025Pawn_h
+#define CURRENT_FILE_ID ShooterNaves2025_Source_ShooterNaves2025_ShooterNaves2025Pawn_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

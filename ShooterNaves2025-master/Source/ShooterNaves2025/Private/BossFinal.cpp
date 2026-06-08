@@ -37,11 +37,13 @@ void ABossFinal::BuffearEnemigosCercanos()
 		ActoresEncontrados
 	);
 
+	OnBuffBossActivado.Clear();
+
 	for (AActor* Actor : ActoresEncontrados)
 	{
 		ANave_Padre* Nave = Cast<ANave_Padre>(Actor);
 
-		if (!Nave || Nave == this)
+		if (!Nave || Nave == this || Nave->bEstaMuerta)
 		{
 			continue;
 		}
@@ -50,7 +52,9 @@ void ABossFinal::BuffearEnemigosCercanos()
 
 		if (Distancia <= 800.0f)
 		{
-			Nave->AplicarBuffBoss(1.25f, 0.7f);
+			Nave->SuscribirseABuffBoss(this);
 		}
 	}
+
+	NotificarBuffBoss(1.25f, 0.7f);
 }

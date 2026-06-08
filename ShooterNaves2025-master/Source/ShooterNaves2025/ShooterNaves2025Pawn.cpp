@@ -121,51 +121,60 @@ void AShooterNaves2025Pawn::Tick(float DeltaSeconds)
 
 void AShooterNaves2025Pawn::FireShot(FVector FireDirection)
 {
-
 	if (bEstaMuerto)
 	{
 		return;
 	}
 
-	// If it's ok to fire again
-	if (bCanFire == true)
+	if (!bCanFire)
 	{
-		// If we are pressing fire stick in a direction
-		if (FireDirection.SizeSquared() > 0.0f)
-		{
-			const FRotator FireRotation = FireDirection.Rotation();
-			// Spawn projectile at an offset from this pawn
-			const FVector SpawnLocation = GetActorLocation() + FireRotation.RotateVector(GunOffset);
+		return;
+	}
 
-			UWorld* const World = GetWorld();
-			if (World != nullptr)
-			{
-				// spawn the projectile
-				AShooterNaves2025Projectile* Proyectil = ObtenerProyectilDisponible();
+	if (FireDirection.SizeSquared() <= 0.0f)
+	{
+		return;
+	}
 
-				if (Proyectil)
-				{
-					Proyectil->SetOwner(this);
-					Proyectil->Danio = 25.0f * MultiplicadorDanio;
-					Proyectil->ActivarProyectil(SpawnLocation, FireRotation);
-				}
-				else
-				{
-					UE_LOG(LogTemp, Error, TEXT("No se pudo obtener ni crear proyectil"));
-				}
-			}
+	UWorld* const World = GetWorld();
 
-			bCanFire = false;
-			World->GetTimerManager().SetTimer(TimerHandle_ShotTimerExpired, this, &AShooterNaves2025Pawn::ShotTimerExpired, FireRate);
+	if (!World)
+	{
+		return;
+	}
 
-			// try and play the sound if specified
-			if (FireSound != nullptr)
-			{
-				UGameplayStatics::PlaySoundAtLocation(this, FireSound, GetActorLocation());
-			}
+	const FRotator FireRotation = FireDirection.Rotation();
+	const FVector SpawnLocation = GetActorLocation() + FireRotation.RotateVector(GunOffset);
 
-			bCanFire = false;
-		}
+	AShooterNaves2025Projectile* Proyectil = ObtenerProyectilDisponible();
+
+	if (Proyectil)
+	{
+		Proyectil->SetOwner(this);
+		Proyectil->Danio = 25.0f * MultiplicadorDanio;
+		Proyectil->ActivarProyectil(SpawnLocation, FireRotation);
+	}
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("No se pudo obtener ni crear proyectil"));
+		return;
+	}
+
+	bCanFire = false;
+
+	const float FireRateSeguro = FMath::Max(FireRate, 0.05f);
+
+	World->GetTimerManager().SetTimer(
+		TimerHandle_ShotTimerExpired,
+		this,
+		&AShooterNaves2025Pawn::ShotTimerExpired,
+		FireRateSeguro,
+		false
+	);
+
+	if (FireSound != nullptr)
+	{
+		UGameplayStatics::PlaySoundAtLocation(this, FireSound, GetActorLocation());
 	}
 }
 

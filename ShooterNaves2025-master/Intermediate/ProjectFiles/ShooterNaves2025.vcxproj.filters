@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\ShooterNaves2025.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{85F67EFD-68B0-4104-82D6-6233E6FA44AD}</UniqueIdentifier>
+      <UniqueIdentifier>{A442EAD4-EFDE-4E2B-B124-B74B1F35B135}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\ShooterNaves2025.Target.cs">
       <Filter>Source</Filter>
@@ -13,8 +13,9 @@
     </None>
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
+    <None Include="..\..\Source.zip" />
     <Filter Include="Config">
-      <UniqueIdentifier>{EF73574F-5E61-4E5B-89A4-85F33D7C777E}</UniqueIdentifier>
+      <UniqueIdentifier>{F046C0CD-1201-4DFF-BE66-1FEA7A590656}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -32,7 +33,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\ShooterNaves2025">
-      <UniqueIdentifier>{5D852A73-2CED-41CB-9426-57FB724AFBD7}</UniqueIdentifier>
+      <UniqueIdentifier>{E8E9F460-7457-403C-8702-D96439EC3D31}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\ShooterNaves2025\ShooterNaves2025.Build.cs">
       <Filter>Source\ShooterNaves2025</Filter>
@@ -62,7 +63,7 @@
       <Filter>Source\ShooterNaves2025</Filter>
     </ClInclude>
     <Filter Include="Source\ShooterNaves2025\Private">
-      <UniqueIdentifier>{77F3FD46-004E-4DE7-851E-51ED21C1AE30}</UniqueIdentifier>
+      <UniqueIdentifier>{31C1DA99-F01D-4643-BA84-F52E75B1565B}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\ShooterNaves2025\Private\AsteroideBonus.cpp">
       <Filter>Source\ShooterNaves2025\Private</Filter>
@@ -70,10 +71,19 @@
     <ClCompile Include="..\..\Source\ShooterNaves2025\Private\BossFinal.cpp">
       <Filter>Source\ShooterNaves2025\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\ShooterNaves2025\Private\EnemyAttackFacade.cpp">
+      <Filter>Source\ShooterNaves2025\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\ShooterNaves2025\Private\EnemyFactory.cpp">
       <Filter>Source\ShooterNaves2025\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\ShooterNaves2025\Private\EnemySpawnFacade.cpp">
+      <Filter>Source\ShooterNaves2025\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\ShooterNaves2025\Private\MiniBoss.cpp">
+      <Filter>Source\ShooterNaves2025\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\ShooterNaves2025\Private\MyObject.cpp">
       <Filter>Source\ShooterNaves2025\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\ShooterNaves2025\Private\Nave_Francotirador.cpp">
@@ -103,7 +113,22 @@
     <ClCompile Include="..\..\Source\ShooterNaves2025\Private\PowerUpCuracion.cpp">
       <Filter>Source\ShooterNaves2025\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\ShooterNaves2025\Private\PowerUpCuracionDecorator.cpp">
+      <Filter>Source\ShooterNaves2025\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\ShooterNaves2025\Private\PowerUpDanioDecorator.cpp">
+      <Filter>Source\ShooterNaves2025\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\ShooterNaves2025\Private\PowerUpDanioExtra.cpp">
+      <Filter>Source\ShooterNaves2025\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\ShooterNaves2025\Private\PowerUpEffect.cpp">
+      <Filter>Source\ShooterNaves2025\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\ShooterNaves2025\Private\PowerUpEffectDecorator.cpp">
+      <Filter>Source\ShooterNaves2025\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\ShooterNaves2025\Private\PowerUpVelocidadDecorator.cpp">
       <Filter>Source\ShooterNaves2025\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\ShooterNaves2025\Private\PowerUpVelocidadExtra.cpp">
@@ -115,11 +140,8 @@
     <ClCompile Include="..\..\Source\ShooterNaves2025\Private\ShooterHUD.cpp">
       <Filter>Source\ShooterNaves2025\Private</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\ShooterNaves2025\Private\SpawnerEnemigos.cpp">
-      <Filter>Source\ShooterNaves2025\Private</Filter>
-    </ClCompile>
     <Filter Include="Source\ShooterNaves2025\Public">
-      <UniqueIdentifier>{62897362-DCAE-4FC6-8884-87361FB5FE1A}</UniqueIdentifier>
+      <UniqueIdentifier>{701021A3-051F-47FD-860C-FC1D98CA20EA}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\ShooterNaves2025\Public\AsteroideBonus.h">
       <Filter>Source\ShooterNaves2025\Public</Filter>
@@ -127,10 +149,19 @@
     <ClInclude Include="..\..\Source\ShooterNaves2025\Public\BossFinal.h">
       <Filter>Source\ShooterNaves2025\Public</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\ShooterNaves2025\Public\EnemyAttackFacade.h">
+      <Filter>Source\ShooterNaves2025\Public</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\ShooterNaves2025\Public\EnemyFactory.h">
       <Filter>Source\ShooterNaves2025\Public</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\ShooterNaves2025\Public\EnemySpawnFacade.h">
+      <Filter>Source\ShooterNaves2025\Public</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\ShooterNaves2025\Public\MiniBoss.h">
+      <Filter>Source\ShooterNaves2025\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\ShooterNaves2025\Public\MyObject.h">
       <Filter>Source\ShooterNaves2025\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\ShooterNaves2025\Public\Nave_Francotirador.h">
@@ -160,7 +191,22 @@
     <ClInclude Include="..\..\Source\ShooterNaves2025\Public\PowerUpCuracion.h">
       <Filter>Source\ShooterNaves2025\Public</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\ShooterNaves2025\Public\PowerUpCuracionDecorator.h">
+      <Filter>Source\ShooterNaves2025\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\ShooterNaves2025\Public\PowerUpDanioDecorator.h">
+      <Filter>Source\ShooterNaves2025\Public</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\ShooterNaves2025\Public\PowerUpDanioExtra.h">
+      <Filter>Source\ShooterNaves2025\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\ShooterNaves2025\Public\PowerUpEffect.h">
+      <Filter>Source\ShooterNaves2025\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\ShooterNaves2025\Public\PowerUpEffectDecorator.h">
+      <Filter>Source\ShooterNaves2025\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\ShooterNaves2025\Public\PowerUpVelocidadDecorator.h">
       <Filter>Source\ShooterNaves2025\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\ShooterNaves2025\Public\PowerUpVelocidadExtra.h">
@@ -170,9 +216,6 @@
       <Filter>Source\ShooterNaves2025\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\ShooterNaves2025\Public\ShooterHUD.h">
-      <Filter>Source\ShooterNaves2025\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\ShooterNaves2025\Public\SpawnerEnemigos.h">
       <Filter>Source\ShooterNaves2025\Public</Filter>
     </ClInclude>
   </ItemGroup>

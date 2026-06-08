@@ -1,6 +1,8 @@
 #include "PowerUpVelocidadExtra.h"
 #include "../ShooterNaves2025Pawn.h"
 #include "../ShooterNaves2025GameMode.h"
+#include "PowerUpEffect.h"
+#include "PowerUpVelocidadDecorator.h"
 #include "Kismet/GameplayStatics.h"
 
 APowerUpVelocidadExtra::APowerUpVelocidadExtra()
@@ -16,18 +18,12 @@ APowerUpVelocidadExtra::APowerUpVelocidadExtra()
 
 void APowerUpVelocidadExtra::AplicarEfecto(AShooterNaves2025Pawn* Jugador)
 {
-	if (Jugador)
-	{
-		UE_LOG(LogTemp, Warning, TEXT("POWER UP RECOGIDO: VELOCIDAD x%f por %f segundos"), Cantidad, Duracion);
-		Jugador->ActivarVelocidadExtra(Cantidad, Duracion);
-	}
+	UE_LOG(LogTemp, Warning, TEXT("POWER UP RECOGIDO: VELOCIDAD x%f por %f segundos"), Cantidad, Duracion);
 
-	AShooterNaves2025GameMode* GameMode = Cast<AShooterNaves2025GameMode>(
-		UGameplayStatics::GetGameMode(GetWorld())
-	);
+	UPowerUpEffect* EfectoBase = NewObject<UPowerUpEffect>(this);
+	UPowerUpVelocidadDecorator* DecoradorVelocidad = NewObject<UPowerUpVelocidadDecorator>(this);
 
-	if (GameMode)
-	{
-		GameMode->MostrarMensajeTemporal(TEXT("POWER UP: VELOCIDAD EXTRA"), 3.0f);
-	}
+	DecoradorVelocidad->Inicializar(EfectoBase);
+	DecoradorVelocidad->Configurar(Cantidad, Duracion);
+	DecoradorVelocidad->Aplicar(Jugador, GetWorld());
 }

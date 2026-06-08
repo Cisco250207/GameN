@@ -123,14 +123,17 @@ void AShooterNaves2025Projectile::ActivarProyectil(FVector NuevaUbicacion, FRota
 
 	SetActorEnableCollision(true);
 
-	GetWorldTimerManager().ClearTimer(TimerDesactivar);
-	GetWorldTimerManager().SetTimer(
-		TimerDesactivar,
-		this,
-		&AShooterNaves2025Projectile::DesactivarProyectil,
-		3.0f,
-		false
-	);
+	if (GetWorld())
+	{
+		GetWorldTimerManager().ClearTimer(TimerDesactivar);
+		GetWorldTimerManager().SetTimer(
+			TimerDesactivar,
+			this,
+			&AShooterNaves2025Projectile::DesactivarProyectil,
+			3.0f,
+			false
+		);
+	}
 
 	UE_LOG(LogTemp, Warning, TEXT("Proyectil activado en: %s"), *NuevaUbicacion.ToString());
 }
@@ -139,7 +142,10 @@ void AShooterNaves2025Projectile::DesactivarProyectil()
 {
 	bActivo = false;
 
-	GetWorldTimerManager().ClearTimer(TimerDesactivar);
+	if (GetWorld())
+	{
+		GetWorldTimerManager().ClearTimer(TimerDesactivar);
+	}
 
 	if (ProjectileMovement)
 	{

@@ -1,20 +1,13 @@
 #include "ShooterNaves2025GameMode.h"
 #include "ShooterNaves2025Pawn.h"
-#include "Nave_Liviana.h"
-#include "Nave_Normal.h"
-#include "Nave_Pesada.h"
-#include "Kismet/GameplayStatics.h"
-#include "Engine/World.h"
 #include "MiniBoss.h"
 #include "ShooterHUD.h"
-#include "BossFinal.h"
-#include "EnemyFactory.h"
-#include "Nave_Kamikaze.h"
-#include "Nave_Francotirador.h"
-#include "Nave_Tanque.h"
+#include "EnemySpawnFacade.h"
 
 AShooterNaves2025GameMode::AShooterNaves2025GameMode()
 {
+    EnemySpawnFacade = CreateDefaultSubobject<UEnemySpawnFacade>(TEXT("EnemySpawnFacade"));
+
     DefaultPawnClass = AShooterNaves2025Pawn::StaticClass();
     HUDClass = AShooterHUD::StaticClass();
 
@@ -28,6 +21,12 @@ AShooterNaves2025GameMode::AShooterNaves2025GameMode()
 void AShooterNaves2025GameMode::BeginPlay()
 {
     Super::BeginPlay();
+
+    if (EnemySpawnFacade)
+    {
+        EnemySpawnFacade->Inicializar(this);
+    }
+
     CambiarEstado(EEstadoJuego::Jugando);
     IniciarNivel();
 }
@@ -71,35 +70,16 @@ void AShooterNaves2025GameMode::IniciarNivel()
 
 void AShooterNaves2025GameMode::SpawnOleada()
 {
-    UWorld* World = GetWorld();
-    if (!World || !bJugando) return;
-
-    float AlturaJugador = 200.0f;
-    APawn* Jugador = UGameplayStatics::GetPlayerPawn(World, 0);
-
-    if (Jugador)
+    if (!GetWorld() || !bJugando || !EnemySpawnFacade)
     {
-        AlturaJugador = Jugador->GetActorLocation().Z;
+        return;
     }
-
-    FVector SpawnPos = FVector(
-        FMath::FRandRange(-800.f, 800.f),
-        FMath::FRandRange(-800.f, 800.f),
-        AlturaJugador
-    );
-
-    AActor* NuevoEnemigo = nullptr;
 
     if (NivelActual == 6)
     {
         if (!bBossFinalSpawned)
         {
-            BossFinalActual = World->SpawnActor<ABossFinal>(
-                ABossFinal::StaticClass(),
-                SpawnPos,
-                FRotator::ZeroRotator
-            );
-
+            BossFinalActual = EnemySpawnFacade->SpawnBossFinal();
             bBossFinalSpawned = true;
 
             MostrarMensajeTemporal(TEXT("BOSS FINAL APARECIO"), 4.0f);
@@ -113,40 +93,30 @@ void AShooterNaves2025GameMode::SpawnOleada()
             return;
         }
 
-        NuevoEnemigo = FEnemyFactory::CrearEnemigoPorNivel(
-            World,
-            NivelActual,
-            SpawnPos
-        );
+        AActor* NuevoEnemigo = EnemySpawnFacade->SpawnEnemigoPorNivel(NivelActual);
 
-        EnemigosGeneradosNivel6++;
-    }
-    else
-    {
-        if (EnemigosGenerados >= MetaEnemigos)
+        if (NuevoEnemigo)
         {
-            GetWorldTimerManager().ClearTimer(TimerSpawn);
-            return;
+            EnemigosGeneradosNivel6++;
         }
 
-        NuevoEnemigo = FEnemyFactory::CrearEnemigoPorNivel(
-            World,
-            NivelActual,
-            SpawnPos
-        );
+        return;
     }
+
+    if (EnemigosGenerados >= MetaEnemigos)
+    {
+        GetWorldTimerManager().ClearTimer(TimerSpawn);
+        return;
+    }
+
+    AActor* NuevoEnemigo = EnemySpawnFacade->SpawnEnemigoPorNivel(NivelActual);
 
     if (NuevoEnemigo)
     {
-        EnemigosActivos.Add(NuevoEnemigo);
-
-        if (NivelActual != 6)
-        {
-            EnemigosGenerados++;
-        }
+        EnemigosGenerados++;
 
         UE_LOG(LogTemp, Warning,
-            TEXT("Enemigo spawneado por Factory. Nivel: %d"),
+            TEXT("Enemigo spawneado por EnemySpawnFacade. Nivel: %d"),
             NivelActual);
     }
 }
@@ -167,28 +137,10 @@ void AShooterNaves2025GameMode::MiniBossDestruido()
 
 void AShooterNaves2025GameMode::DestruirTodosLosEnemigos()
 {
-    for (int32 i = EnemigosActivos.Num() - 1; i >= 0; i--)
+    if (EnemySpawnFacade)
     {
-        AActor* Enemigo = EnemigosActivos[i];
-
-        if (!IsValid(Enemigo))
-        {
-            EnemigosActivos.RemoveAt(i);
-            continue;
-        }
-
-        // No destruyas aqui al miniboss, porque ya esta muriendo desde Morir()
-        if (Enemigo == MiniBossActual)
-        {
-            EnemigosActivos.RemoveAt(i);
-            continue;
-        }
-
-        Enemigo->Destroy();
-        EnemigosActivos.RemoveAt(i);
+        EnemySpawnFacade->DestruirTodosLosEnemigos(MiniBossActual);
     }
-
-    EnemigosActivos.Empty();
 }
 
 // Se llama cada vez que el jugador destruye un enemigo
@@ -204,28 +156,17 @@ void AShooterNaves2025GameMode::EnemigoDestruido()
         !bMiniBossSpawned &&
         EnemigosMuertosNivelActual >= EnemigosParaAparecerMiniBoss)
     {
-        FVector SpawnBoss = FVector(0.f, 0.f, 200.f);
-
-        APawn* Jugador = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
-        if (Jugador)
+        if (EnemySpawnFacade)
         {
-            SpawnBoss.Z = Jugador->GetActorLocation().Z;
-        }
+            MiniBossActual = EnemySpawnFacade->SpawnMiniBoss();
 
-        UWorld* World = GetWorld();
+            if (MiniBossActual)
+            {
+                bMiniBossSpawned = true;
+                EnemigosMuertosDesdeMiniBoss = 0;
 
-        if (World)
-        {
-            MiniBossActual = World->SpawnActor<AMiniBoss>(
-                AMiniBoss::StaticClass(),
-                SpawnBoss,
-                FRotator::ZeroRotator
-            );
-
-            bMiniBossSpawned = true;
-            EnemigosMuertosDesdeMiniBoss = 0;
-
-            UE_LOG(LogTemp, Warning, TEXT("MINIBOSS APARECIO"));
+                UE_LOG(LogTemp, Warning, TEXT("MINIBOSS APARECIO"));
+            }
         }
     }
     else if (NivelActual == 3 && bMiniBossSpawned && !bMiniBossDerrotado)
@@ -251,7 +192,7 @@ void AShooterNaves2025GameMode::EnemigoDestruido()
     VerificarMeta();
 }
 
-// Verifica si el jugador ya destruyo todos los enemigos necesarios
+// Se ve si el jugador ya destruyo todos los enemigos necesarios
 void AShooterNaves2025GameMode::VerificarMeta()
 {
     if (NivelActual == 3)
@@ -286,7 +227,10 @@ void AShooterNaves2025GameMode::VerificarMeta()
 // Pasa al siguiente nivel o activa el good ending
 void AShooterNaves2025GameMode::SiguienteNivel()
 {
-    EnemigosActivos.Empty();
+    if (EnemySpawnFacade)
+    {
+        EnemySpawnFacade->VaciarEnemigos();
+    }
 
     if (NivelActual == 3)
     {
@@ -419,12 +363,12 @@ float AShooterNaves2025GameMode::CalcularIntervaloSpawn(int32 Nivel)
 {
     switch (Nivel)
     {
-    case 1: return 4.0f; // Uno cada 4 segundos, facil
+    case 1: return 4.0f; // Uno cada 4 segundos facil
     case 2: return 3.0f;
     case 3: return 2.5f;
     case 4: return 2.0f;
     case 5: return 1.5f;
-    case 6: return 5.0f; // Boss, solo aparece uno
+    case 6: return 5.0f; // Boss solo aparece uno
     default: return 3.0f;
     }
 }
