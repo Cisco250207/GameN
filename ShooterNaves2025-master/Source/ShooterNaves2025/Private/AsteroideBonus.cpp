@@ -12,7 +12,7 @@ AAsteroideBonus::AAsteroideBonus()
 	MeshAsteroide = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MeshAsteroide"));
 	RootComponent = MeshAsteroide;
 
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshRoca(TEXT("/Engine/BasicShapes/Sphere.Sphere"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshRoca(TEXT("/Game/NAVE/hangar_largeB/0_Mesh_hangar_largeB.0_Mesh_hangar_largeB"));
 
 	if (MeshRoca.Succeeded())
 	{

@@ -1,10 +1,10 @@
-D:\ShooterNaves2025\Intermediate\Build\Win64\UE4Editor\Development\ShooterNaves2025\Definitions.ShooterNaves2025.h
-D:\ShooterNaves2025\Source\ShooterNaves2025\Public\ProyectilEnemigo.h
-D:\ShooterNaves2025\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\ProyectilEnemigo.generated.h
+D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Development\ShooterNaves2025\Definitions.ShooterNaves2025.h
+D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Source\ShooterNaves2025\Public\ProyectilEnemigo.h
+D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\ProyectilEnemigo.generated.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/ProjectileMovementComponent.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/MovementComponent.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\MovementComponent.generated.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ProjectileMovementComponent.generated.h
-D:\ShooterNaves2025\Source\ShooterNaves2025\Private\../ShooterNaves2025Pawn.h
-D:\ShooterNaves2025\Source\TObjectPool.h
-D:\ShooterNaves2025\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\ShooterNaves2025Pawn.generated.h
+D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Source\ShooterNaves2025\Private\../ShooterNaves2025Pawn.h
+D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Source\TObjectPool.h
+D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\ShooterNaves2025Pawn.generated.h

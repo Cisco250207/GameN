@@ -12,7 +12,7 @@ ANave_Normal::ANave_Normal()
 
     // Cambiar mesh del padre
     static ConstructorHelpers::FObjectFinder<UStaticMesh> CuboMesh(
-        TEXT("/Engine/BasicShapes/Cube.Cube"));
+        TEXT("/Game/NAVE/craft_racer/0_Mesh_craft_racer.0_Mesh_craft_racer"));
 
     if (CuboMesh.Succeeded())
     {

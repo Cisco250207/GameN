@@ -16,8 +16,9 @@ ANave_Padre::ANave_Padre()
 
 	MeshNave = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MeshNave"));
 	RootComponent = MeshNave;
+    MeshNave->SetRelativeRotation(FRotator(0.f, 90.f, 0.f));
 
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshCubo(TEXT("/Engine/BasicShapes/Cube.Cube"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshCubo(TEXT("/Game/NAVE/craft_miner/0_Mesh_craft_miner.0_Mesh_craft_miner"));
 
 	if (MeshCubo.Succeeded())
 	{
@@ -29,7 +30,7 @@ ANave_Padre::ANave_Padre()
 	MeshNave->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
 	MeshNave->SetCollisionObjectType(ECC_Pawn);
 	MeshNave->SetCollisionResponseToAllChannels(ECR_Block);
-	MeshNave->SetWorldScale3D(FVector(1.0f, 1.0f, 1.0f)); // tamaño normal
+	MeshNave->SetWorldScale3D(FVector(1.0f, 1.0f, 1.0f)); // tamaï¿½o normal
 }
 
 void ANave_Padre::BeginPlay()
