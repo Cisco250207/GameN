@@ -9,18 +9,9 @@
 			"Type": "Runtime",
 			"LoadingPhase": "Default",
 			"AdditionalDependencies": [
-				"Engine"
+				"Engine",
+				"CoreUObject"
 			]
-		}
-	],
-	"Plugins": [
-		{
-			"Name": "DatasmithGLTFImporter",
-			"Enabled": true
-		},
-		{
-			"Name": "GLTFImporter",
-			"Enabled": true
 		}
 	]
 }
