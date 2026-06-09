@@ -1,20 +1,20 @@
-D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Development\ShooterNaves2025\Definitions.ShooterNaves2025.h
-D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Source\ShooterNaves2025\Public\ShooterHUD.h
+D:\PROYECTOS\NProject\Proyecto V4 - copia\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Development\ShooterNaves2025\Definitions.ShooterNaves2025.h
+D:\PROYECTOS\NProject\Proyecto V4 - copia\ShooterNaves2025-master\Source\ShooterNaves2025\Public\ShooterHUD.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/HUD.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/HUDHitBox.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/DebugTextInfo.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\DebugTextInfo.generated.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\HUD.generated.h
-D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\ShooterHUD.generated.h
-D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Source\ShooterNaves2025\Private\../ShooterNaves2025Pawn.h
-D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Source\TObjectPool.h
-D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\ShooterNaves2025Pawn.generated.h
-D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Source\ShooterNaves2025\Private\../ShooterNaves2025GameMode.h
+D:\PROYECTOS\NProject\Proyecto V4 - copia\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\ShooterHUD.generated.h
+D:\PROYECTOS\NProject\Proyecto V4 - copia\ShooterNaves2025-master\Source\ShooterNaves2025\Private\../ShooterNaves2025Pawn.h
+D:\PROYECTOS\NProject\Proyecto V4 - copia\ShooterNaves2025-master\Source\TObjectPool.h
+D:\PROYECTOS\NProject\Proyecto V4 - copia\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\ShooterNaves2025Pawn.generated.h
+D:\PROYECTOS\NProject\Proyecto V4 - copia\ShooterNaves2025-master\Source\ShooterNaves2025\Private\../ShooterNaves2025GameMode.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
-D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\ShooterNaves2025GameMode.generated.h
+D:\PROYECTOS\NProject\Proyecto V4 - copia\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\ShooterNaves2025GameMode.generated.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet/GameplayStatics.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet/KismetSystemLibrary.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/PropertyAccessUtil.h

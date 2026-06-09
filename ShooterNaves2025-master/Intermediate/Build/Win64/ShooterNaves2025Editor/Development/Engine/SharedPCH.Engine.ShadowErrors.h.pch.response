@@ -260,11 +260,11 @@
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt"
-/I "D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Intermediate\Build\Win64\ShooterNaves2025Editor\Development\Engine"
-/Yc"D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Intermediate\Build\Win64\ShooterNaves2025Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Fp"D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Intermediate\Build\Win64\ShooterNaves2025Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
-"D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Intermediate\Build\Win64\ShooterNaves2025Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.cpp"
-/Fo"D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Intermediate\Build\Win64\ShooterNaves2025Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+/I "D:\PROYECTOS\NProject\Proyecto V4 - copia\ShooterNaves2025-master\Intermediate\Build\Win64\ShooterNaves2025Editor\Development\Engine"
+/Yc"D:\PROYECTOS\NProject\Proyecto V4 - copia\ShooterNaves2025-master\Intermediate\Build\Win64\ShooterNaves2025Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Fp"D:\PROYECTOS\NProject\Proyecto V4 - copia\ShooterNaves2025-master\Intermediate\Build\Win64\ShooterNaves2025Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
+"D:\PROYECTOS\NProject\Proyecto V4 - copia\ShooterNaves2025-master\Intermediate\Build\Win64\ShooterNaves2025Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.cpp"
+/Fo"D:\PROYECTOS\NProject\Proyecto V4 - copia\ShooterNaves2025-master\Intermediate\Build\Win64\ShooterNaves2025Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
 /TP
 /GR-
 /W4

@@ -1,9 +1,9 @@
-D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Development\ShooterNaves2025\Definitions.ShooterNaves2025.h
-D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Source\ShooterNaves2025\Public\MyObject.h
+D:\PROYECTOS\NProject\Proyecto V4 - copia\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Development\ShooterNaves2025\Definitions.ShooterNaves2025.h
+D:\PROYECTOS\NProject\Proyecto V4 - copia\ShooterNaves2025-master\Source\ShooterNaves2025\Public\MyObject.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/NoExportTypes.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/PropertyAccessUtil.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\Math/UnitConversion.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\Math/UnitConversion.inl
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\Internationalization/PolyglotTextData.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\AssetRegistry/ARFilter.h
-D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\MyObject.generated.h
+D:\PROYECTOS\NProject\Proyecto V4 - copia\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\MyObject.generated.h

@@ -1,5 +1,5 @@
-D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Development\ShooterNaves2025\Definitions.ShooterNaves2025.h
-D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Source\ShooterNaves2025\Public\Nave_Kamikaze.h
-D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Source\ShooterNaves2025\Public\Nave_Padre.h
-D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\Nave_Padre.generated.h
-D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\Nave_Kamikaze.generated.h
+D:\PROYECTOS\NProject\Proyecto V4 - copia\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Development\ShooterNaves2025\Definitions.ShooterNaves2025.h
+D:\PROYECTOS\NProject\Proyecto V4 - copia\ShooterNaves2025-master\Source\ShooterNaves2025\Public\Nave_Kamikaze.h
+D:\PROYECTOS\NProject\Proyecto V4 - copia\ShooterNaves2025-master\Source\ShooterNaves2025\Public\Nave_Padre.h
+D:\PROYECTOS\NProject\Proyecto V4 - copia\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\Nave_Padre.generated.h
+D:\PROYECTOS\NProject\Proyecto V4 - copia\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\Nave_Kamikaze.generated.h

@@ -14,7 +14,7 @@ AMiniBoss::AMiniBoss()
 
 	// Mesh distintiva del miniboss
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> BossMesh(
-		TEXT("/Engine/BasicShapes/Cone.Cone"));
+		TEXT("/Game/NAVES/space_ship/0_Object_0.0_Object_0"));
 
 	if (BossMesh.Succeeded())
 	{
@@ -31,5 +31,5 @@ void AMiniBoss::Debilitar()
 	MultiplicadorDanioRecibido = 1.0f;
 	Velocidad = 90.0f;
 
-	UE_LOG(LogTemp, Warning, TEXT("MiniBoss debilitado. Ahora recibe daño completo."));
+	UE_LOG(LogTemp, Warning, TEXT("MiniBoss debilitado. Ahora recibe daï¿½o completo."));
 }

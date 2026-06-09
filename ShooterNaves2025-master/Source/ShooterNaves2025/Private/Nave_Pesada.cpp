@@ -13,7 +13,7 @@ ANave_Pesada::ANave_Pesada()
 
 	// Cilindro
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> CilindroMesh(
-		TEXT("/Game/NAVE/craft_cargoB/0_Mesh_craft_cargoB.0_Mesh_craft_cargoB"));
+		TEXT("/Engine/BasicShapes/Cylinder.Cylinder"));
 
 	if (CilindroMesh.Succeeded())
 	{

@@ -96,8 +96,7 @@ public:
 	// Static names for axis bindings
 	static const FName MoveForwardBinding;
 	static const FName MoveRightBinding;
-	static const FName FireForwardBinding;
-	static const FName FireRightBinding;
+
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Pool")
 	int32 CantidadProyectilesPool = 30;
@@ -108,6 +107,13 @@ public:
 
 	AShooterNaves2025Projectile* ObtenerProyectilDisponible();
 
+	float MouseYawInput = 0.f;
+float MousePitchInput = 0.f;
+
+void Turn(float Value);
+void LookUp(float Value);
+void Fire(float Value);
+FRotator CameraRotation;
 
 private:
 

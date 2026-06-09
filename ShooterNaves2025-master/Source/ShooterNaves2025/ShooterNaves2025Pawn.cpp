@@ -17,12 +17,11 @@
 
 const FName AShooterNaves2025Pawn::MoveForwardBinding("MoveForward");
 const FName AShooterNaves2025Pawn::MoveRightBinding("MoveRight");
-const FName AShooterNaves2025Pawn::FireForwardBinding("FireForward");
-const FName AShooterNaves2025Pawn::FireRightBinding("FireRight");
+
 
 AShooterNaves2025Pawn::AShooterNaves2025Pawn()
 {	
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("/Game/TwinStick/Meshes/TwinStickUFO.TwinStickUFO"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("/Game/NAVES/spaceship_fighter__-_version_2_meshy_6/0_Mesh1_0_Material_001_0.0_Mesh1_0_Material_001_0"));
 	// Create the mesh component
 	ShipMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ShipMesh"));
 	RootComponent = ShipMeshComponent;
@@ -38,12 +37,28 @@ AShooterNaves2025Pawn::AShooterNaves2025Pawn()
 	FireSound = FireAudio.Object;
 
 	// Create a camera boom...
-	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
-	CameraBoom->SetupAttachment(RootComponent);
-	CameraBoom->SetUsingAbsoluteRotation(true); // Don't want arm to rotate when ship does
-	CameraBoom->TargetArmLength = 1200.f;
-	CameraBoom->SetRelativeRotation(FRotator(-80.f, 0.f, 0.f));
-	CameraBoom->bDoCollisionTest = false; // Don't want to pull camera in when it collides with level
+CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
+CameraBoom->SetupAttachment(RootComponent);
+
+// Distancia de la cámara detrás de la nave
+CameraBoom->TargetArmLength = 600.f;
+
+// Cámara ligeramente arriba y atrás
+CameraBoom->SetRelativeLocation(FVector(0.f, 0.f, 80.f));
+
+
+// Hace que el brazo siga la rotación del Pawn
+CameraBoom->bUsePawnControlRotation = false;
+
+// Suavizado de cámara
+CameraBoom->bEnableCameraLag = true;
+CameraBoom->CameraLagSpeed = 8.f;
+
+CameraBoom->bEnableCameraRotationLag = true;
+CameraBoom->CameraRotationLagSpeed = 10.f;
+
+// Evita que choque con paredes
+CameraBoom->bDoCollisionTest = false;
 
 	// Create a camera...
 	CameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("TopDownCamera"));
@@ -62,19 +77,51 @@ AShooterNaves2025Pawn::AShooterNaves2025Pawn()
 	bCanFire = true;
 }
 
-void AShooterNaves2025Pawn::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
+void AShooterNaves2025Pawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
-	check(PlayerInputComponent);
+    check(PlayerInputComponent);
 
-	PlayerInputComponent->BindAxis(MoveForwardBinding);
-	PlayerInputComponent->BindAxis(MoveRightBinding);
-	PlayerInputComponent->BindAxis(FireForwardBinding);
-	PlayerInputComponent->BindAxis(FireRightBinding);
+    PlayerInputComponent->BindAxis(MoveForwardBinding);
+    PlayerInputComponent->BindAxis(MoveRightBinding);
 
-	PlayerInputComponent->BindAction("RestartLevel", IE_Pressed, this, &AShooterNaves2025Pawn::ReiniciarNivel);
+    PlayerInputComponent->BindAxis("Turn", this, &AShooterNaves2025Pawn::Turn);
+    PlayerInputComponent->BindAxis("LookUp", this, &AShooterNaves2025Pawn::LookUp);
 
-	// Prueba directa: no depende del Action Mapping de Unreal
-	PlayerInputComponent->BindKey(EKeys::R, IE_Pressed, this, &AShooterNaves2025Pawn::ReiniciarNivel);
+	PlayerInputComponent->BindAxis("Fire", this, &AShooterNaves2025Pawn::Fire);
+
+    PlayerInputComponent->BindAction("RestartLevel", IE_Pressed, this, &AShooterNaves2025Pawn::ReiniciarNivel);
+
+    PlayerInputComponent->BindKey(EKeys::R, IE_Pressed, this, &AShooterNaves2025Pawn::ReiniciarNivel);
+}
+
+void AShooterNaves2025Pawn::Turn(float Value)
+{
+	if (FMath::Abs(Value) > KINDA_SMALL_NUMBER)
+	{
+		AddActorLocalRotation(
+			FRotator(0.f, Value * 100.f * GetWorld()->GetDeltaSeconds(), 0.f)
+		);
+	}
+}
+
+void AShooterNaves2025Pawn::LookUp(float Value)
+{
+	if (FMath::Abs(Value) > KINDA_SMALL_NUMBER)
+	{
+		AddActorLocalRotation(
+			FRotator(Value * 100.f * GetWorld()->GetDeltaSeconds(), 0.f, 0.f)
+		);
+	}
+}
+void AShooterNaves2025Pawn::Fire(float Value)
+{
+    if (Value > 0.0f)
+    {
+        FVector FireDirection =
+            GetActorForwardVector();
+
+        FireShot(FireDirection);
+    }
 }
 
 void AShooterNaves2025Pawn::Tick(float DeltaSeconds)
@@ -86,11 +133,24 @@ void AShooterNaves2025Pawn::Tick(float DeltaSeconds)
 	}
 
 	// Find movement direction
-	const float ForwardValue = GetInputAxisValue(MoveForwardBinding);
-	const float RightValue = GetInputAxisValue(MoveRightBinding);
+const float ForwardValue =
+    GetInputAxisValue(MoveForwardBinding);
 
-	// Clamp max size so that (X=1, Y=1) doesn't cause faster movement in diagonal directions
-	const FVector MoveDirection = FVector(ForwardValue, RightValue, 0.f).GetClampedToMaxSize(1.0f);
+const float RightValue =
+    GetInputAxisValue(MoveRightBinding);
+
+FVector Forward =
+    GetActorForwardVector();
+
+FVector Right =
+    GetActorRightVector();
+
+const FVector MoveDirection =
+(
+    Forward * ForwardValue +
+    Right * RightValue
+).GetClampedToMaxSize(1.0f);
+
 
 	// Calculate  movement
 	const FVector Movement = MoveDirection * MoveSpeed * DeltaSeconds;
@@ -98,7 +158,7 @@ void AShooterNaves2025Pawn::Tick(float DeltaSeconds)
 	// If non-zero size, move this actor
 	if (Movement.SizeSquared() > 0.0f)
 	{
-		const FRotator NewRotation = Movement.Rotation();
+		const FRotator NewRotation = GetActorRotation();
 		FHitResult Hit(1.f);
 		RootComponent->MoveComponent(Movement, NewRotation, true, &Hit);
 		
@@ -110,13 +170,18 @@ void AShooterNaves2025Pawn::Tick(float DeltaSeconds)
 		}
 	}
 	
-	// Create fire direction vector
-	const float FireForwardValue = GetInputAxisValue(FireForwardBinding);
-	const float FireRightValue = GetInputAxisValue(FireRightBinding);
-	const FVector FireDirection = FVector(FireForwardValue, FireRightValue, 0.f);
 
-	// Try and fire a shot
-	FireShot(FireDirection);
+	if (CameraBoom)
+{
+    // Rotación de la nave
+    FRotator ShipRotation = GetActorRotation();
+
+    // Mantener inclinación de cámara
+    ShipRotation.Pitch -= 10.f;
+
+    // La cámara rota detrás de la nave
+    CameraBoom->SetWorldRotation(ShipRotation);
+}
 }
 
 void AShooterNaves2025Pawn::FireShot(FVector FireDirection)
@@ -176,6 +241,7 @@ void AShooterNaves2025Pawn::FireShot(FVector FireDirection)
 	{
 		UGameplayStatics::PlaySoundAtLocation(this, FireSound, GetActorLocation());
 	}
+
 }
 
 void AShooterNaves2025Pawn::ShotTimerExpired()
@@ -308,6 +374,23 @@ void AShooterNaves2025Pawn::BeginPlay()
 	Super::BeginPlay();
 
 	CrearPoolProyectiles();
+
+	// FORZAR configuración de cámara
+	if (CameraBoom)
+	{
+		CameraBoom->bUsePawnControlRotation = false;
+
+		CameraBoom->bInheritPitch = true;
+		CameraBoom->bInheritYaw = true;
+		CameraBoom->bInheritRoll = true;
+
+		CameraBoom->TargetArmLength = 600.f;
+
+		CameraBoom->SetRelativeLocation(
+			FVector(0.f, 0.f, 80.f)
+		);
+
+	}
 }
 
 void AShooterNaves2025Pawn::CrearPoolProyectiles()

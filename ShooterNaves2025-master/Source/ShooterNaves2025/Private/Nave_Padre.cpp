@@ -16,9 +16,8 @@ ANave_Padre::ANave_Padre()
 
 	MeshNave = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MeshNave"));
 	RootComponent = MeshNave;
-    MeshNave->SetRelativeRotation(FRotator(0.f, 90.f, 0.f));
 
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshCubo(TEXT("/Game/NAVE/craft_miner/0_Mesh_craft_miner.0_Mesh_craft_miner"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshCubo(TEXT("/Game/NAVES/space_ship_(1)/0_Plane_005_0.0_Plane_005_0"));
 
 	if (MeshCubo.Succeeded())
 	{

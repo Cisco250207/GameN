@@ -1,25 +1,25 @@
-D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Development\ShooterNaves2025\Definitions.ShooterNaves2025.h
-D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Source\ShooterNaves2025\Public\PowerUpVelocidadDecorator.h
-D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Source\ShooterNaves2025\Public\PowerUpEffectDecorator.h
-D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Source\ShooterNaves2025\Public\PowerUpEffect.h
+D:\PROYECTOS\NProject\Proyecto V4 - copia\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Development\ShooterNaves2025\Definitions.ShooterNaves2025.h
+D:\PROYECTOS\NProject\Proyecto V4 - copia\ShooterNaves2025-master\Source\ShooterNaves2025\Public\PowerUpVelocidadDecorator.h
+D:\PROYECTOS\NProject\Proyecto V4 - copia\ShooterNaves2025-master\Source\ShooterNaves2025\Public\PowerUpEffectDecorator.h
+D:\PROYECTOS\NProject\Proyecto V4 - copia\ShooterNaves2025-master\Source\ShooterNaves2025\Public\PowerUpEffect.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/NoExportTypes.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/PropertyAccessUtil.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\Math/UnitConversion.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\Math/UnitConversion.inl
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Core\Public\Internationalization/PolyglotTextData.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\AssetRegistry/ARFilter.h
-D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\PowerUpEffect.generated.h
-D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\PowerUpEffectDecorator.generated.h
-D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\PowerUpVelocidadDecorator.generated.h
-D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Source\ShooterNaves2025\Private\../ShooterNaves2025Pawn.h
-D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Source\TObjectPool.h
-D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\ShooterNaves2025Pawn.generated.h
-D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Source\ShooterNaves2025\Private\../ShooterNaves2025GameMode.h
+D:\PROYECTOS\NProject\Proyecto V4 - copia\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\PowerUpEffect.generated.h
+D:\PROYECTOS\NProject\Proyecto V4 - copia\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\PowerUpEffectDecorator.generated.h
+D:\PROYECTOS\NProject\Proyecto V4 - copia\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\PowerUpVelocidadDecorator.generated.h
+D:\PROYECTOS\NProject\Proyecto V4 - copia\ShooterNaves2025-master\Source\ShooterNaves2025\Private\../ShooterNaves2025Pawn.h
+D:\PROYECTOS\NProject\Proyecto V4 - copia\ShooterNaves2025-master\Source\TObjectPool.h
+D:\PROYECTOS\NProject\Proyecto V4 - copia\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\ShooterNaves2025Pawn.generated.h
+D:\PROYECTOS\NProject\Proyecto V4 - copia\ShooterNaves2025-master\Source\ShooterNaves2025\Private\../ShooterNaves2025GameMode.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
-D:\PROYECTOS\NProject\PROYECT V2\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\ShooterNaves2025GameMode.generated.h
+D:\PROYECTOS\NProject\Proyecto V4 - copia\ShooterNaves2025-master\Intermediate\Build\Win64\UE4Editor\Inc\ShooterNaves2025\ShooterNaves2025GameMode.generated.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet/GameplayStatics.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Kismet/KismetSystemLibrary.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\KismetSystemLibrary.generated.h

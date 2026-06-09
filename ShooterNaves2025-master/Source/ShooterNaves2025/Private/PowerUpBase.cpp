@@ -11,7 +11,7 @@ APowerUpBase::APowerUpBase()
 	MeshPowerUp = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MeshPowerUp"));
 	RootComponent = MeshPowerUp;
 
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshEsfera(TEXT("/Game/NAVE/turret_double/1_Mesh_turret.1_Mesh_turret"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshEsfera(TEXT("/Engine/BasicShapes/Sphere.Sphere"));
 
 	if (MeshEsfera.Succeeded())
 	{

@@ -12,16 +12,15 @@ ANave_Liviana::ANave_Liviana()
 
 	// Esfera
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> EsferaMesh(
-		TEXT("/Game/NAVE/craft_speederB/0_Mesh_craft_speederB.0_Mesh_craft_speederB"));
+		TEXT("/Engine/BasicShapes/Sphere.Sphere"));
 
 	if (EsferaMesh.Succeeded())
 	{
 		MeshNave->SetStaticMesh(EsferaMesh.Object);
 	}
 
-	// Escala pequeï¿½a
+	// Escala pequeña
 	MeshNave->SetWorldScale3D(FVector(1.0f, 1.0f, 1.0f));
-	MeshNave->SetRelativeRotation(FRotator(0.f, 90.f, 0.f));
 }
 
 void ANave_Liviana::ConfigurarPatronesAtaque()
