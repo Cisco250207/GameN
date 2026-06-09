@@ -1,5 +1,4 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
-
 #include "ShooterNaves2025Pawn.h"
 #include "ShooterNaves2025Projectile.h"
 #include "TimerManager.h"
@@ -21,7 +20,7 @@ const FName AShooterNaves2025Pawn::MoveRightBinding("MoveRight");
 
 AShooterNaves2025Pawn::AShooterNaves2025Pawn()
 {	
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("/Game/NAVES/spaceship_fighter__-_version_2_meshy_6/0_Mesh1_0_Material_001_0.0_Mesh1_0_Material_001_0"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> ShipMesh(TEXT("/Game/TwinStick/Meshes/TwinStickUFO.TwinStickUFO"));
 	// Create the mesh component
 	ShipMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("ShipMesh"));
 	RootComponent = ShipMeshComponent;
@@ -31,6 +30,8 @@ AShooterNaves2025Pawn::AShooterNaves2025Pawn()
 	ShipMeshComponent->SetGenerateOverlapEvents(true);
 	ShipMeshComponent->SetCollisionResponseToChannel(ECC_WorldDynamic, ECR_Block);
 	ShipMeshComponent->SetCollisionResponseToChannel(ECC_Pawn, ECR_Overlap);
+
+	//ShipMeshComponent->SetRelativeRotation(FRotator(270.f, 0.f, 180.f));
 	
 	// Cache our sound effect
 	static ConstructorHelpers::FObjectFinder<USoundBase> FireAudio(TEXT("/Game/TwinStick/Audio/TwinStickFire.TwinStickFire"));
@@ -133,16 +134,16 @@ void AShooterNaves2025Pawn::Tick(float DeltaSeconds)
 	}
 
 	// Find movement direction
-const float ForwardValue =
+    const float ForwardValue =
     GetInputAxisValue(MoveForwardBinding);
 
-const float RightValue =
+    const float RightValue =
     GetInputAxisValue(MoveRightBinding);
 
-FVector Forward =
+    FVector Forward =
     GetActorForwardVector();
 
-FVector Right =
+    FVector Right =
     GetActorRightVector();
 
 const FVector MoveDirection =

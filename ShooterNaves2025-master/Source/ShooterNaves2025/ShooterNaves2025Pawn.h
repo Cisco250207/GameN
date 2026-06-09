@@ -108,12 +108,12 @@ public:
 	AShooterNaves2025Projectile* ObtenerProyectilDisponible();
 
 	float MouseYawInput = 0.f;
-float MousePitchInput = 0.f;
+    float MousePitchInput = 0.f;
 
-void Turn(float Value);
-void LookUp(float Value);
-void Fire(float Value);
-FRotator CameraRotation;
+    void Turn(float Value);
+    void LookUp(float Value);
+    void Fire(float Value);
+     FRotator CameraRotation;
 
 private:
 

@@ -10,9 +10,10 @@ ANave_Normal::ANave_Normal()
     Velocidad = 300.0f;
     DanioContacto = 15.0f;
 
+	
     // Cambiar mesh del padre
     static ConstructorHelpers::FObjectFinder<UStaticMesh> CuboMesh(
-        TEXT("/Engine/BasicShapes/Cube.Cube"));
+        TEXT("/Game/NAVES/space_ship_(5)/0_Circle_Material_007_0.0_Circle_Material_007_0"));
 
     if (CuboMesh.Succeeded())
     {

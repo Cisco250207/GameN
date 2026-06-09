@@ -12,14 +12,14 @@ ANave_Liviana::ANave_Liviana()
 
 	// Esfera
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> EsferaMesh(
-		TEXT("/Engine/BasicShapes/Sphere.Sphere"));
+		TEXT("/Game/NAVES/space_ship_(7)/3_polySurface6_Drone_0.3_polySurface6_Drone_0"));
 
 	if (EsferaMesh.Succeeded())
 	{
 		MeshNave->SetStaticMesh(EsferaMesh.Object);
 	}
 
-	// Escala pequeña
+	// Escala pequeï¿½a
 	MeshNave->SetWorldScale3D(FVector(1.0f, 1.0f, 1.0f));
 }
 

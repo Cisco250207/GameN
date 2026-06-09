@@ -125,7 +125,6 @@ void ANave_Padre::Morir()
 void ANave_Padre::MoverHaciaJugador(float DeltaTime)
 {
 	FVector Direccion = Jugador->GetActorLocation() - GetActorLocation();
-	Direccion.Z = 0.0f;
 
 	if (Direccion.Size() <= DistanciaMinima)
 	{
@@ -139,7 +138,6 @@ void ANave_Padre::MoverHaciaJugador(float DeltaTime)
 		GetActorLocation() +
 		DireccionMovimiento * Velocidad * DeltaTime;
 
-	NuevaUbicacion.Z = Jugador->GetActorLocation().Z;
 
 	SetActorLocation(NuevaUbicacion);
 
@@ -157,7 +155,7 @@ FVector ANave_Padre::CalcularDireccionMovimiento(float DeltaTime)
 	FVector Direccion =
 		Jugador->GetActorLocation() - GetActorLocation();
 
-	Direccion.Z = 0.0f;
+
 
 	if (Direccion.SizeSquared() <= 0.0f)
 	{

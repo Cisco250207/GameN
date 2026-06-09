@@ -13,7 +13,7 @@ ANave_Pesada::ANave_Pesada()
 
 	// Cilindro
 	static ConstructorHelpers::FObjectFinder<UStaticMesh> CilindroMesh(
-		TEXT("/Engine/BasicShapes/Cylinder.Cylinder"));
+		TEXT("/Game/NAVES/space_ship_(10)/0_Object_0.0_Object_0"));
 
 	if (CilindroMesh.Succeeded())
 	{
